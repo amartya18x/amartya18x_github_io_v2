@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="DPhil (PhD) Student in Computer Scienc">
+  <meta name="description" content="A key feature of neural networks, particularly deep convolutional neural networks, is their ability to &#39;learn&#39; useful representations from data. The very last layer of a neural network is then simply a linear model trained on these &#39;learned&#39; representations. Despite their numerous applications in other tasks such as classification, retrieval, clustering etc., a.k.a. transfer learning, not much work has been published that investigates the structure of these representations or whether structure can be imposed on them during the training process. In this paper, we study the dimensionality of the learned representations by models that have proved highly succesful for image classification. We focus on ResNet-18, ResNet-50 and VGG-19 and observe that when trained on CIFAR10 or CIFAR100 datasets, the learned representations exhibit a fairly low rank structure. We propose a modification to the training procedure, which further encourages low rank representations of activations at various stages in the neural network. Empirically, we show that this has implications for compression and robustness to adversarial examples.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/talk/">
+  <link rel="alternate" hreflang="en-us" href="/publication/lr_layer/">
 
   
 
@@ -43,6 +43,9 @@
   
 
   
+  
+  
+  <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -174,9 +177,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -210,14 +213,12 @@
 
 
   
-  <link rel="alternate" href="/talk/index.xml" type="application/rss+xml" title="Academic">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/talk/">
+  <link rel="canonical" href="/publication/lr_layer/">
 
   
   
@@ -231,18 +232,63 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Academic">
-  <meta property="og:url" content="/talk/">
-  <meta property="og:title" content="Recent &amp; Upcoming Talks | Academic">
-  <meta property="og:description" content="DPhil (PhD) Student in Computer Scienc"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/publication/lr_layer/">
+  <meta property="og:title" content="Learning Low Rank Representations | Academic">
+  <meta property="og:description" content="A key feature of neural networks, particularly deep convolutional neural networks, is their ability to &#39;learn&#39; useful representations from data. The very last layer of a neural network is then simply a linear model trained on these &#39;learned&#39; representations. Despite their numerous applications in other tasks such as classification, retrieval, clustering etc., a.k.a. transfer learning, not much work has been published that investigates the structure of these representations or whether structure can be imposed on them during the training process. In this paper, we study the dimensionality of the learned representations by models that have proved highly succesful for image classification. We focus on ResNet-18, ResNet-50 and VGG-19 and observe that when trained on CIFAR10 or CIFAR100 datasets, the learned representations exhibit a fairly low rank structure. We propose a modification to the training procedure, which further encourages low rank representations of activations at various stages in the neural network. Empirically, we show that this has implications for compression and robustness to adversarial examples."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2018-04-01T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2018-04-01T00:00:00&#43;00:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/publication/lr_layer/"
+  },
+  "headline": "Learning Low Rank Representations",
+  
+  "datePublished": "2018-04-01T00:00:00Z",
+  "dateModified": "2018-04-01T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Amartya Sanyal"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img//"
+    }
+  },
+  "description": "A key feature of neural networks, particularly deep convolutional neural networks, is their ability to 'learn' useful representations from data. The very last layer of a neural network is then simply a linear model trained on these 'learned' representations. Despite their numerous applications in other tasks such as classification, retrieval, clustering etc., a.k.a. transfer learning, not much work has been published that investigates the structure of these representations or whether structure can be imposed on them during the training process. In this paper, we study the dimensionality of the learned representations by models that have proved highly succesful for image classification. We focus on ResNet-18, ResNet-50 and VGG-19 and observe that when trained on CIFAR10 or CIFAR100 datasets, the learned representations exhibit a fairly low rank structure. We propose a modification to the training procedure, which further encourages low rank representations of activations at various stages in the neural network. Empirically, we show that this has implications for compression and robustness to adversarial examples."
+}
+</script>
+
+  
 
   
 
@@ -250,10 +296,13 @@
   
 
 
+  
 
 
 
-  <title>Recent &amp; Upcoming Talks | Academic</title>
+
+
+  <title>Learning Low Rank Representations | Academic</title>
 
 </head>
 
@@ -501,47 +550,336 @@
 </nav>
 
 
+  <div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Learning Low Rank Representations</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/amartya-sanyal/">Amartya Sanyal</a></span>, <span><a href="/authors/varun-kanade/">Varun Kanade</a></span>, <span>Philip H.S. Torr</span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    April 2018
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
   
 
 
 
 
 
-
-
-
-
-
-
-
-  
-
-  
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>Recent &amp; Upcoming Talks</h1>
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/abs/1804.07090" target="_blank" rel="noopener">
+  Preprint
+</a>
+
+
+
 
   
+    
+  
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://arxiv.org/pdf/1804.07090" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
   
 </div>
 
 
 
-<div class="universal-wrapper">
-  <div class="row">
-    <div class="col-lg-12">
+  <div class="article-container">
 
-      
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">A key feature of neural networks, particularly deep convolutional neural networks, is their ability to &lsquo;learn&rsquo; useful representations from data. The very last layer of a neural network is then simply a linear model trained on these &lsquo;learned&rsquo; representations. Despite their numerous applications in other tasks such as classification, retrieval, clustering etc., a.k.a. transfer learning, not much work has been published that investigates the structure of these representations or whether structure can be imposed on them during the training process. In this paper, we study the dimensionality of the learned representations by models that have proved highly succesful for image classification. We focus on ResNet-18, ResNet-50 and VGG-19 and observe that when trained on CIFAR10 or CIFAR100 datasets, the learned representations exhibit a fairly low rank structure. We propose a modification to the training procedure, which further encourages low rank representations of activations at various stages in the neural network. Empirically, we show that this has implications for compression and robustness to adversarial examples.</p>
+    
 
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            
+            
+            <a href="/publication/#3">
+              Preprint
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In submission</div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/publication/lr_layer/&amp;text=Learning%20Low%20Rank%20Representations" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/publication/lr_layer/&amp;t=Learning%20Low%20Rank%20Representations" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Learning%20Low%20Rank%20Representations&amp;body=/publication/lr_layer/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/publication/lr_layer/&amp;title=Learning%20Low%20Rank%20Representations" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Learning%20Low%20Rank%20Representations%20/publication/lr_layer/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/publication/lr_layer/&amp;title=Learning%20Low%20Rank%20Representations" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/authors/amartya-sanyal/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
 
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
 </div>
 
       

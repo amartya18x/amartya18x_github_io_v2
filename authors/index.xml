@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
@@ -13,12 +13,84 @@
     </image>
     
     <item>
+      <title>Amartya Sanyal</title>
+      <link>/authors/amartya-sanyal/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/amartya-sanyal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Philip H.S. Torr</title>
+      <link>/authors/philip-h.s.-torr/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/philip-h.s.-torr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Puneet K Dokania</title>
+      <link>/authors/puneet-k-dokania/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/puneet-k-dokania/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Adria Gascon</title>
+      <link>/authors/adria-gascon/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/adria-gascon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matt kusner</title>
+      <link>/authors/matt-kusner/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/matt-kusner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Varun Kanade</title>
+      <link>/authors/varun-kanade/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/varun-kanade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pawan Kumar</title>
+      <link>/authors/pawan-kumar/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/pawan-kumar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Purushottam Kar</title>
+      <link>/authors/purushottam-kar/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/purushottam-kar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sanjay Chawla</title>
+      <link>/authors/sanjay-chawla/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/sanjay-chawla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title></title>
       <link>/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.&lt;/p&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.&lt;/p&gt;
+      <description>&lt;p&gt;#Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.&lt;/p&gt;
+&lt;p&gt;#Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.&lt;/p&gt;
 </description>
     </item>
     
