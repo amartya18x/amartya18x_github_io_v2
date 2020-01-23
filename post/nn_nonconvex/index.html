@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Amartya Sanyal">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="amartya18x.github.io/post/nn_nonconvex/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/amartya18x.github.io/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/amartya18x.github.io/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/amartya18x.github.io/index.webmanifest">
+  <link rel="icon" type="image/png" href="/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="amartya18x.github.io/post/nn_nonconvex/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@AmartyaSanyal">
+  <meta property="twitter:creator" content="@AmartyaSanyal">
+  
+  <meta property="og:site_name" content="Amartya Sanyal">
+  <meta property="og:url" content="amartya18x.github.io/post/nn_nonconvex/">
+  <meta property="og:title" content="NonConvexity of neural networks | Amartya Sanyal">
+  <meta property="og:description" content="I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex."><meta property="og:image" content="/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2016-10-01T03:52:46&#43;05:30">
+    
+    <meta property="article:modified_time" content="2020-01-23T11:07:53&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "amartya18x.github.io/post/nn_nonconvex/"
+  },
+  "headline": "NonConvexity of neural networks",
+  
+  "datePublished": "2016-10-01T03:52:46+05:30",
+  "dateModified": "2020-01-23T11:07:53Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Amartya Sanyal"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Amartya Sanyal",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img/amartya18x.github.io"
+    }
+  },
+  "description": "I don't remember where I heard this arguement but it was a pretty interesting one and I couldn't remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize because they are non-convex(or non-concave) for that matter. What we don't talk about so much is why is it that they are non-convex."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>NonConvexity of neural networks | Amartya Sanyal</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/amartya18x.github.io/">Amartya Sanyal</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/amartya18x.github.io/">Amartya Sanyal</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/amartya18x.github.io/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/amartya18x.github.io/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/amartya18x.github.io/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/amartya18x.github.io/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/amartya18x.github.io/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>NonConvexity of neural networks</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 23, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>I don't remember where I heard this arguement but it was a pretty interesting one and I couldn't remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don't talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.</p>
+<p>To understand the reasoning, we have to argue that if the function has atleast two local minimas such that their mid-point is not a local minima, the function is non-convex. In formal terms, $$\text{If }\exists x,y \in Dom(f) \hspace{5pt }s.t.\hspace{5pt} g(x) = g(y) = 0 $$ and $$\forall z\in [x,y] \text{ s.t. } g(z) \neq 0  $$ where $g(x)$ is a subgradient at $x$ the function is non-convex.</p>
+<p>This is pretty simple to follow from the Mid-point value theorem and the definition of convexity.</p>
+<p>Consider a neural network  $F(\cdot)$ with a few layers and name three layers $L_1, L_2$ and $ L_3$ Consider nodes $a$ and $b$ in $L_1$ and $c$ and $d$ in $L_2$.Let the parameters connecting node $i$ to $j$ be called $w_{ij}$.</p>
+<p>Thee arguement to the function can be thought of as $A=[\cdots w_{ac}, w_{ad}, \cdots , w_{bc}, w_{bd}\cdots]$ and the function evaluation as $f(A)$. Consider $B=[\cdots w_{ad}, w_{ac},\cdots, w_{bd}, w_{bc},  \cdots]$. I can claim that there exists a $B$ i.e. where $ w_{ad}, w_{ac}$ and $ w_{bd},  w_{bc} $  are swapped respectively, there exists an ordering of the other weights(permute the other edges) such that the function evaluation remains same. It is pretty easy to see how it can be true.</p>
+<blockquote>
+<p>Look at the following picture where the reg edges come into one node and the green into another.</p>
+</blockquote>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/before.png" data-caption="Before permutation!">
+<img data-src="/before.png" class="lazyload" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Before permutation!
+  </figcaption>
+
+
+</figure>
+
+For reference consider</p>
+<ul>
+<li>The first red edge coming out of the top left node as $w_{ac}$</li>
+<li>The gree edge out of the same node as $w_{ad}$.</li>
+<li>The red edge out of the second node in the same layer as  $w_{bc}$</li>
+<li>The green edge out of the second node as   $ w_{bd} $.</li>
+</ul>
+<p>Connect all edges coming in to $L_2$ from $L_1$ into node $d$ to node $c$ and vice versa and then shift the origin of  all outgoing edges from node $c$ to $L_3$ to node $d$ and vice versa. What you have acheived is the network that you would have achieved by holding the two nodes by your hand and manually exchanging their positions while keeping the connecting edges intact. And Voila! now you have $A, B \in dom(F)$ where $F(A) = F(B) $.</p>
+<blockquote>
+<p>Now look at them after the edges are shifted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/after.png" data-caption="After permutation!">
+<img data-src="/after.png" class="lazyload" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    After permutation!
+  </figcaption>
+
+
+</figure>
+</p>
+</blockquote>
+<p>The natural doubt you might suddenly have is <code>What about a linear network ? </code>. Well, it is a well known fact that such a function can be stated as $F(x; A, b) = Ax + b$ for some matrix $A$ and vector $B$. And as you know, linear layers do not have a maxima or a minima and hence the whole assumption we made about having $g(x) = 0$ i.e. zero subgradients, do not hold. Thus, it does not contradict the statement given earlier.</p>
+<p>We will also need to understand how it holds the other point about there existing some point between the local optimas such that it does not have the same value as the optima. To understand this lets look at simplified representation of $F(\cdot)$. Instead, of taking the weights of the edges to be the arguements of $F(\cdot)$, let the nodes be  the arguements.<br>
+$$F(n_{1,1}, n_{1, 2}, \cdots, n_{3,1}\cdots)$$
+where $n_{i, j}$ is the $j^{th}$ node in $i^{th}$ layer.
+$$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-1}$ is the weight connecting the $k^{th}$ node in ${i-1}^{th}$ layer to the $j^{th}$ node in layer $i$.</p>
+<p>Note that the transformation from the earlier definition to this definition is many-to-one and not one-to-one, which is easy to guess because of the reduction in the number of parameters.</p>
+<p>Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn't change it's value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.</p>
+<blockquote>
+<p>What we can infer from this is that for each unique optimal value, there exists $\prod_{i=1}^k n_k!$ points in the parameter space that can achieve that local optima, where $n_k$ is the number of nodes in the $k^{th}$ layer. Turns out that the number of saddle points are exponentially more!</p>
+</blockquote>
+<p>The above statement however holds true only when the values of the $n_k$ nodes in that layer are also distinct but I guess the idea is clear and it is more of discrete mathematics.</p>
+<blockquote>
+<p>What this might look like is shown below. Note that this is not the loss function of a neural network but rather a function called Rastrigin function taken from wikipedia.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/Rastrigin.png" data-caption="Many many optimas!">
+<img data-src="/Rastrigin.png" class="lazyload" alt="" ></a>
+
+
+  
+  
+  <figcaption>
+    Many many optimas!
+  </figcaption>
+
+
+</figure>
+
+<p>To observe that the points between the local minimas are suboptimal, you will probably have to figure something out more rigorous as I do not have a very tight arguement, but lets look at a very interesting intuition.</p>
+<p>Let's assume that the function is convex. This would allow the function to be hit by jensen's inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
+We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn't really matter if they are unique or not). If you apply jensen's inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).</p>
+<p>But notice that we are actually averaging all the permutations possible in a layer and thus what we will get is a set of arguements such that the nodes that belong to the same layer have the same value. To understand this look at the matrices below and assume one layer corresponds to a column. The two matrices are thus independant permutations of the two columns.[
+M_1=
+\begin{bmatrix}
+1 &amp; 2 \\\<br>
+3 &amp; 4
+\end{bmatrix}
+]</p>
+<p>[
+M_2=
+\begin{bmatrix}
+3 &amp; 4 \\\<br>
+1 &amp; 2
+\end{bmatrix}
+]</p>
+<p>[
+\frac{M_1 + M_2}{2}=
+\begin{bmatrix}
+2 &amp; 3 \\\<br>
+2 &amp; 3
+\end{bmatrix}
+]
+What this effectively means is that if the neural network was indeed convex, there would be a value which could be given to all nodes in a layer and yet the network would have represented a local optima. This is higly absurd and is very apparent if you consider a classification network where the final outputs should not have the same value in all nodes given some value in the input layer(which is also a part of the function arguement).</p>
+<p>To generalize this to any neural network, you will have to look at the activation functions and their properties. The claim you will be trying to verify is that the average of two permutations of an optimal point need not be optimal.</p>
+<p>I guess this was an interesting read. A very interesting thing this says is that</p>
+<blockquote>
+<p>A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn't it ?</p>
+</blockquote>
+<p>I guess I haven't been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!</p>
+
+    </div>
+
+    
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="amartya18x.github.io/tags/academic/">academic</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=amartya18x.github.io/post/nn_nonconvex/&amp;text=NonConvexity%20of%20neural%20networks" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=amartya18x.github.io/post/nn_nonconvex/&amp;t=NonConvexity%20of%20neural%20networks" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=NonConvexity%20of%20neural%20networks&amp;body=amartya18x.github.io/post/nn_nonconvex/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=amartya18x.github.io/post/nn_nonconvex/&amp;title=NonConvexity%20of%20neural%20networks" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=NonConvexity%20of%20neural%20networks%20amartya18x.github.io/post/nn_nonconvex/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=amartya18x.github.io/post/nn_nonconvex/&amp;title=NonConvexity%20of%20neural%20networks" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/amartya18x.github.io/authors/admin/avatar_hue776a334b902d7828bf5c7a8aa11ccb3_924185_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="amartya18x.github.io">Amartya Sanyal</a></h5>
+      <h6 class="card-subtitle">DPhil (PhD) Student in Computer Science</h6>
+      <p class="card-text">I am interested in a theoretical understanding the behaviours of deep neural networks and designing practical algorithms to avoid some of its unwanted artifacts.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:amartya18x@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/AmartyaSanyal" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=cRLqsyYAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/amartya18x" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/amartya18x.github.io/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="amartya18x.github.io/post/strconvex/">Strong Convexity and Strong Smoothness</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.3/mermaid.min.js" integrity="" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/amartya18x.github.io/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/amartya18x.github.io/js/academic.min.c4716762638572b143da1c828c87dcd8.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

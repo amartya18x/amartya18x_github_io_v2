@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amartya Sanyal</title>
+    <link>amartya18x.github.io/tags/academic/</link>
+      <atom:link href="amartya18x.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Amartya Sanyal</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2016 03:52:46 +0530</lastBuildDate>
+    <image>
+      <url>/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Amartya Sanyal</title>
+      <link>amartya18x.github.io/tags/academic/</link>
+    </image>
+    
+    <item>
+      <title>NonConvexity of neural networks</title>
+      <link>amartya18x.github.io/post/nn_nonconvex/</link>
+      <pubDate>Sat, 01 Oct 2016 03:52:46 +0530</pubDate>
+      <guid>amartya18x.github.io/post/nn_nonconvex/</guid>
+      <description>&lt;p&gt;I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
+&lt;p&gt;To understand the reasoning, we have to argue that if the function has atleast two local minimas such that their mid-point is not a local minima, the function is non-convex. In formal terms, $$\text{If }\exists x,y \in Dom(f) \hspace{5pt }s.t.\hspace{5pt} g(x) = g(y) = 0 $$ and $$\forall z\in [x,y] \text{ s.t. } g(z) \neq 0  $$ where $g(x)$ is a subgradient at $x$ the function is non-convex.&lt;/p&gt;
+&lt;p&gt;This is pretty simple to follow from the Mid-point value theorem and the definition of convexity.&lt;/p&gt;
+&lt;p&gt;Consider a neural network  $F(\cdot)$ with a few layers and name three layers $L_1, L_2$ and $ L_3$ Consider nodes $a$ and $b$ in $L_1$ and $c$ and $d$ in $L_2$.Let the parameters connecting node $i$ to $j$ be called $w_{ij}$.&lt;/p&gt;
+&lt;p&gt;Thee arguement to the function can be thought of as $A=[\cdots w_{ac}, w_{ad}, \cdots , w_{bc}, w_{bd}\cdots]$ and the function evaluation as $f(A)$. Consider $B=[\cdots w_{ad}, w_{ac},\cdots, w_{bd}, w_{bc},  \cdots]$. I can claim that there exists a $B$ i.e. where $ w_{ad}, w_{ac}$ and $ w_{bd},  w_{bc} $  are swapped respectively, there exists an ordering of the other weights(permute the other edges) such that the function evaluation remains same. It is pretty easy to see how it can be true.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Look at the following picture where the reg edges come into one node and the green into another.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/before.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Before permutation!
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+For reference consider&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The first red edge coming out of the top left node as $w_{ac}$&lt;/li&gt;
+&lt;li&gt;The gree edge out of the same node as $w_{ad}$.&lt;/li&gt;
+&lt;li&gt;The red edge out of the second node in the same layer as  $w_{bc}$&lt;/li&gt;
+&lt;li&gt;The green edge out of the second node as   $ w_{bd} $.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Connect all edges coming in to $L_2$ from $L_1$ into node $d$ to node $c$ and vice versa and then shift the origin of  all outgoing edges from node $c$ to $L_3$ to node $d$ and vice versa. What you have acheived is the network that you would have achieved by holding the two nodes by your hand and manually exchanging their positions while keeping the connecting edges intact. And Voila! now you have $A, B \in dom(F)$ where $F(A) = F(B) $.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now look at them after the edges are shifted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/after.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    After permutation!
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The natural doubt you might suddenly have is &lt;code&gt;What about a linear network ? &lt;/code&gt;. Well, it is a well known fact that such a function can be stated as $F(x; A, b) = Ax + b$ for some matrix $A$ and vector $B$. And as you know, linear layers do not have a maxima or a minima and hence the whole assumption we made about having $g(x) = 0$ i.e. zero subgradients, do not hold. Thus, it does not contradict the statement given earlier.&lt;/p&gt;
+&lt;p&gt;We will also need to understand how it holds the other point about there existing some point between the local optimas such that it does not have the same value as the optima. To understand this lets look at simplified representation of $F(\cdot)$. Instead, of taking the weights of the edges to be the arguements of $F(\cdot)$, let the nodes be  the arguements.&lt;br&gt;
+$$F(n_{1,1}, n_{1, 2}, \cdots, n_{3,1}\cdots)$$
+where $n_{i, j}$ is the $j^{th}$ node in $i^{th}$ layer.
+$$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-1}$ is the weight connecting the $k^{th}$ node in ${i-1}^{th}$ layer to the $j^{th}$ node in layer $i$.&lt;/p&gt;
+&lt;p&gt;Note that the transformation from the earlier definition to this definition is many-to-one and not one-to-one, which is easy to guess because of the reduction in the number of parameters.&lt;/p&gt;
+&lt;p&gt;Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn&#39;t change it&#39;s value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What we can infer from this is that for each unique optimal value, there exists $\prod_{i=1}^k n_k!$ points in the parameter space that can achieve that local optima, where $n_k$ is the number of nodes in the $k^{th}$ layer. Turns out that the number of saddle points are exponentially more!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The above statement however holds true only when the values of the $n_k$ nodes in that layer are also distinct but I guess the idea is clear and it is more of discrete mathematics.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What this might look like is shown below. Note that this is not the loss function of a neural network but rather a function called Rastrigin function taken from wikipedia.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Rastrigin.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Many many optimas!
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;To observe that the points between the local minimas are suboptimal, you will probably have to figure something out more rigorous as I do not have a very tight arguement, but lets look at a very interesting intuition.&lt;/p&gt;
+&lt;p&gt;Let&#39;s assume that the function is convex. This would allow the function to be hit by jensen&#39;s inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
+We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn&#39;t really matter if they are unique or not). If you apply jensen&#39;s inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).&lt;/p&gt;
+&lt;p&gt;But notice that we are actually averaging all the permutations possible in a layer and thus what we will get is a set of arguements such that the nodes that belong to the same layer have the same value. To understand this look at the matrices below and assume one layer corresponds to a column. The two matrices are thus independant permutations of the two columns.[
+M_1=
+\begin{bmatrix}
+1 &amp;amp; 2 \\\&lt;br&gt;
+3 &amp;amp; 4
+\end{bmatrix}
+]&lt;/p&gt;
+&lt;p&gt;[
+M_2=
+\begin{bmatrix}
+3 &amp;amp; 4 \\\&lt;br&gt;
+1 &amp;amp; 2
+\end{bmatrix}
+]&lt;/p&gt;
+&lt;p&gt;[
+\frac{M_1 + M_2}{2}=
+\begin{bmatrix}
+2 &amp;amp; 3 \\\&lt;br&gt;
+2 &amp;amp; 3
+\end{bmatrix}
+]
+What this effectively means is that if the neural network was indeed convex, there would be a value which could be given to all nodes in a layer and yet the network would have represented a local optima. This is higly absurd and is very apparent if you consider a classification network where the final outputs should not have the same value in all nodes given some value in the input layer(which is also a part of the function arguement).&lt;/p&gt;
+&lt;p&gt;To generalize this to any neural network, you will have to look at the activation functions and their properties. The claim you will be trying to verify is that the average of two permutations of an optimal point need not be optimal.&lt;/p&gt;
+&lt;p&gt;I guess this was an interesting read. A very interesting thing this says is that&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn&#39;t it ?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I guess I haven&#39;t been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Strong Convexity and Strong Smoothness</title>
+      <link>amartya18x.github.io/post/strconvex/</link>
+      <pubDate>Thu, 15 Sep 2016 23:49:40 +0530</pubDate>
+      <guid>amartya18x.github.io/post/strconvex/</guid>
+      <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
+&lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&#39;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
+&lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
+&lt;p&gt;$$\frac{f(y)+f(x)}{2} \ge f(\frac{x+y}{2}) $$
+Note that this does not require the function to be differentiable. But, with differetiable functions, one can actually get an easier and more productive definition.&lt;/p&gt;
+&lt;h3 id=&#34;convex-differetiable-functions&#34;&gt;Convex differetiable functions&lt;/h3&gt;
+&lt;p&gt;$$ f(y) \ge f(x) + \langle \nabla f(x), y - x \rangle $$&lt;/p&gt;
+&lt;h3 id=&#34;subgradients&#34;&gt;Subgradients&lt;/h3&gt;
+&lt;p&gt;The interesting thing about this is that this can tolerate functions, which are not differntiable in a finite number of points. We need to define &lt;strong&gt;subgradients&lt;/strong&gt; for that though.&lt;/p&gt;
+&lt;p&gt;$$ g(x) = \{ g(x) | \langle g(x), x_0 - x\rangle \forall y \} $$&lt;/p&gt;
+&lt;p&gt;And hence let&#39;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have&lt;/p&gt;
+&lt;p&gt;$$ f(y) \ge f(x) + \langle  g(x), y - x \rangle $$&lt;/p&gt;
+&lt;h2 id=&#34;strongly-convex-function&#34;&gt;Strongly Convex function&lt;/h2&gt;
+&lt;p&gt;Now that we know of convex functions mathematically, it is intuitively a function such that if we draw a tangent plane(line in case of one variable), the function &lt;strong&gt;lies above the tangent plane&lt;/strong&gt; at all points. Mathematically, that would be&lt;/p&gt;
+&lt;p&gt;$$ f(y) \ge f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2 $$ and &lt;strong&gt;$\alpha$&lt;/strong&gt; is known as the strong convexity parameter. One can also, for doubly differntiable functions, say $ \nabla^2 f(x) \succeq \alpha I  $, where $\nabla^2 f(x)$ is the hessian matrix and $ I $ is the identity matrix.&lt;/p&gt;
+&lt;h2 id=&#34;strongly-smooth-function&#34;&gt;Strongly Smooth function&lt;/h2&gt;
+&lt;p&gt;A strongly smooth function is just the opposite of the strongly convex function i.e. a function which &lt;strong&gt;lies below the tangent plane&lt;/strong&gt; at all points. Mathematically, that would be&lt;/p&gt;
+&lt;p&gt;$$ f(y) \le f(x) + \langle g(x), y - x \rangle + \frac{\beta}{2} \| y - x\|^2 $$ and &lt;strong&gt;$\beta$&lt;/strong&gt; is known as the strong smoothness parameter. One can also, for doubly differntiable functions, say $ \beta I \succeq \nabla^2 f(x)  $.&lt;/p&gt;
+&lt;h1 id=&#34;gradient-descent-for-strongly-convex-functions&#34;&gt;Gradient descent for strongly convex functions&lt;/h1&gt;
+&lt;p&gt;We know for a strongly convex function $f(x)$, $$ f(y) \ge f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2 $$ A very nice property of these functions is that, we can actually bound $\|f( x^{*}) - f(x)\|$ where $(x^{*})$ is the optimal point , with the norm of the gradient ($\|\nabla f(x)\|$).
+Let,
+$$
+z = \underset{y}{argmin }\hspace{5pt}  \{ f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2 \}
+$$&lt;/p&gt;
+&lt;p&gt;The definition of strong convexity is applicable for all y.&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+z &amp;amp;= x - \frac{\nabla f(x)}{\alpha} \\&lt;br&gt;
+f(y) &amp;amp;\ge f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2  \\&lt;br&gt;
+&amp;amp;\ge f(x) + \langle g(x), \frac{\nabla f(x)}{\alpha}  \rangle + \frac{\alpha}{2} \| \frac{\nabla f(x)}{\alpha}  \|^2 \\&lt;br&gt;
+&amp;amp;\ge f(x) - \frac{1}{2\alpha} | \nabla f(x)|^2 \\&lt;br&gt;
+\therefore f(x^{*}) &amp;amp;\ge f(x) - \frac{1}{2\alpha} \| \nabla f(x)\|^2
+\end{align*}&lt;/p&gt;
+&lt;p&gt;This interesting bound also gives us a good convergence criterion. Set $f(x) - f(x^{*}) = \epsilon$ i.e. the desired error. We only need to do the gradient descent until the gradient has reached $2\alpha \epsilon$ from the previous inequality.
+$$
+2\alpha \epsilon \le \frac{1}{2\alpha} \| \nabla f(x)\|^2
+$$&lt;/p&gt;
+&lt;p&gt;Like the function value above, we can also get a bound on the distance of the current point from the optimal point in terms of gradient.&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+f(x^{*})  &amp;amp;\ge f(x) + \langle g(x), x^{*} - x \rangle + \frac{\alpha}{2} \| x^{*} - x\|^2  \\&lt;br&gt;
+&amp;amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;amp;&amp;amp; \text{(By Cauchy&#39;s inequality)}\\&lt;br&gt;
+\end{align*}
+As we know that $f(x^{*})$ is optimal $ f(x^{*}) \le f(x)$, a \ge 0 must be true.&lt;/p&gt;
+&lt;p&gt;$$ \| g(x)\|\| x^{*} - x \| \ge \frac{\alpha}{2} \| x^{*} - x\|^2  $$
+Or,
+$$\frac{2}{\alpha} \| g(x)\| \ge   \| x^{*} - x\|  $$&lt;/p&gt;
+&lt;h2 id=&#34;analyzing-the-gradient-descent&#34;&gt;Analyzing the gradient descent&lt;/h2&gt;
+&lt;p&gt;Define,
+$$
+\Phi_t = f(x^t) - f(x^{*})
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&#39;s also define another distance.
+$$
+D_t = \| x^{*} - x_t \|_2
+$$
+\begin{align*}
+\label{eq:phi}
+f(x^{*})  &amp;amp;\ge f(x_t) + \langle \nabla f(x_t), x^{*} - x_t \rangle + \frac{\alpha}{2} \| x^{*} - x_t\|^2  \\&lt;br&gt;
+f(x^{*}) -  f(x_t)  &amp;amp;\ge \hspace{2pt} \langle\nabla f(x_t), x^{*} - x_t \rangle + \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
+\end{align*}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hence, we have the following inequality with the lyapunov function.
+\begin{equation}
+\Phi_t \le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2
+\end{equation}
+Lets work with $D_t$ and then try to relate it with $\Phi_t$.
+\begin{align*}
+D^2_{t+1} &amp;amp;= \|x^{t+1} - x^{*} \|_2^2 \\&lt;br&gt;
+&amp;amp;= \| x^t - \eta_t g_t -   x^{*}\|_2^2 \\&lt;br&gt;
+&amp;amp; = \|x^t - x^{*} \|_2^2 + \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\&lt;br&gt;
+D^2_{t+1} - D^2_{t} &amp;amp;= \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\&lt;br&gt;
+\langle x^t - x^{*}, g_t\rangle &amp;amp;= \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2}
+\end{align*}
+Let&#39;s plugin in this onto the previous definition of the lyapunov function.
+\begin{align*}
+\Phi_t &amp;amp;\le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
+&amp;amp;\le \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
+&amp;amp;\le  \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t
+\end{align*}
+It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&#39;s inequality.
+\begin{align*}
+\sum_{t=0}^T \Phi_t &amp;amp;\le \sum_{t=0}^T (\frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) \\&lt;br&gt;
+&amp;amp;\le  \sum_{t=0}^T (\frac{D^2_t}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) -  \sum_{t=1} \frac{D^2_{t}}{2\eta_{t-1}} &amp;amp;&amp;amp; \text{(A bit of change of variable)} \\&lt;br&gt;
+&amp;amp;\le D_0^2(\frac{1}{2\eta_0} - \frac{\alpha}{2}) +  \sum_{t=1}^T D^2_t(\frac{1}{2\eta_t} - \frac{\alpha}{2} + \frac{1}{2\eta_{t-1}}) + \sum_{t=0}^T\frac{\eta_t G^2}{2} &amp;amp;&amp;amp;\text{(Assuming bounded gradients again)}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;Now, the first term is a constant and the third term is a sum of constants weighed by a parameter that we are fixing. So, the major problem is with the second term. Why note set it to zero ? We can do that by setting &lt;code&gt;$\eta\_t = \frac{1}{\alpha t}$&lt;/code&gt;
+\begin{align*}
+\sum_{t=0}^T \Phi_t &amp;amp;\le D_0^2(\underbrace{\frac{1}{2\eta_0} - \frac{\alpha}{2}}_{\le 0}) +  \sum_{t=1}^T D^2_t( \underbrace{\frac{1}{2\eta_t} - \frac{\alpha}{2} + \frac{1}{2\eta_{t-1}}}_0) + \sum_{t=0}^T\frac{ G^2}{2\alpha t} &amp;amp;&amp;amp;\text{(Assuming bounded gradients again)} \\&lt;br&gt;
+\frac{1}{T}\sum_{t=0}^T {\Phi_t} &amp;amp;\le \frac{G^2 log(T)}{2T} \\&lt;br&gt;
+\sum_{t=0}^T  \frac{f(x^t) - f(x^{*})}{T} &amp;amp;\le \frac{G^2 log(T)}{2T}  \\&lt;br&gt;
+\end{align*}
+Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+$$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{G^2 log(T)}{2T} $$
+To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&#39;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth&lt;/p&gt;
+&lt;h1 id=&#34;gradient-descent-for-strongly-smooth-functions&#34;&gt;Gradient descent for strongly smooth functions&lt;/h1&gt;
+&lt;p&gt;We will work with similar &lt;strong&gt;Lyapunov function&lt;/strong&gt; &lt;code&gt;$\Phi\_t$&lt;/code&gt; and &lt;code&gt;$D\_t$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;As $f(x)$ is strong smooth,
+$$ f(x^{t+1}) \le f(x^t) + \langle \nabla f(x^t), x^{t+1} - x^t \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 $$
+and as $f(x)$ is convex
+$$ f(x^{*}) \ge f(x) + \langle \nabla f(x), x^{*} - x \rangle  $$
+By rearranging terms we get,
+$$  f(x) \le f(x^{*})  + \langle \nabla f(x), x - x^{*}  \rangle  $$
+Plugging in this inequality into the strong smoothness inequality and replacing the $\Phi_{t+1}$ and $D_t$ in the correct places gives us the following&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\Phi_{t+1} &amp;amp;\le   \langle \nabla f(x), x^t - x^{*}\rangle + \langle \nabla f(x^t), x^{t+1} - x^t \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le  \langle \nabla f(x), x^t - x^{*} +  x^{t+1} - x^t \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le  \langle \nabla f(x),  x^{t+1} - x^{*} \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+\end{align*}&lt;/p&gt;
+&lt;p&gt;Now, we know the following &lt;code&gt;$x^{t+1} = x^t - \eta\_t \nabla f(x^t)$&lt;/code&gt; which gives us &lt;code&gt;$\nabla f(x^t) = \frac{x^t - x^{t+1}}{\eta\_t} $&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\Phi_{t+1} &amp;amp;\le  \langle \nabla f(x),  x^{t+1} - x^{*} \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le  \frac{1}{\eta_t}\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+\end{align*}
+Now, we need to evaluate the term &lt;code&gt;$\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle $&lt;/code&gt;
+\begin{align*}
+\|x^t - x^{*}\|^2 &amp;amp;= \|x^t - x^{t+1} + x^{t+1} - x^{*}\| \\&lt;br&gt;
+&amp;amp;=\|x^t - x^{t+1}\|^2 + \|x^{t+1} - x^{*}\| + 2\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle \\&lt;br&gt;
+\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle &amp;amp;= \frac{1}{2}( D_{t}^2 - D_{t+1}^2 -  \|x^{t+1} - x^{*}\| )
+\end{align*}
+Plugging this back into the inequality we have above, we get the following&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\Phi_{t+1}     &amp;amp;\le  \frac{1}{2\eta_t} (D_{t}^2 - D_{t+1}^2 -  \frac{1}{2}\|x^{t+1} - x^{*}\| )+ \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le \frac{1}{2\eta_t} (D_{t}^2 - D_{t+1}^2) - \| x^{t+1} - x^t \|^2 (\frac{1}{2\eta_t} - \frac{\beta}{2})
+\end{align*}
+Set  $\eta_t = \frac{c}{\beta} $  where, $c\in [0,1]$ . We get($0 \ge k\le 1) $
+$$ (\frac{1}{2\eta_t} - \frac{\beta}{2}) = \frac{\beta}{2} (\frac{1}{k} - 1)\ge 0  $$&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\sum_{t=0}^T \Phi_{t+1} &amp;amp;\le \sum_{t=0}^T \frac{\beta}{2c} (D_{t}^2 - D_{t+1}^2)\\&lt;br&gt;
+\frac{1}{T} \sum_{t=0}^T \Phi_{t+1}  &amp;amp;\le \frac{\beta}{2cT} (D_{0}^2 - D_{T+1}^2)
+\end{align*}
+Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+$$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{\beta}{2cT} (D_{0}^2 ) $$&lt;/p&gt;
+&lt;p&gt;For both the strongly convex and the strong smooth functions, we have seen the average selector. Is it possible that some other selector can give us better bounds ? Selector refers to the particular way of choosing the $x$, which we want the function to return.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

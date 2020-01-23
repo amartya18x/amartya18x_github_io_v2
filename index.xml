@@ -1,65 +1,779 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic</title>
-    <link>/</link>
-      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <description>Academic</description>
+    <title>Amartya Sanyal</title>
+    <link>amartya18x.github.io/</link>
+      <atom:link href="amartya18x.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Amartya Sanyal</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Academic</title>
-      <link>/</link>
+      <url>/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Amartya Sanyal</title>
+      <link>amartya18x.github.io/</link>
     </image>
     
     <item>
       <title>Stable Rank Normalization for Improved Generalization in Neural Networks and GANs</title>
-      <link>/publication/stable/</link>
+      <link>amartya18x.github.io/publication/stable/</link>
       <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/stable/</guid>
+      <guid>amartya18x.github.io/publication/stable/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;Add your privacy policy here and set &lt;code&gt;draft: false&lt;/code&gt; to publish it. Otherwise, delete this file if you don&#39;t need it.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Terms</title>
-      <link>/terms/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>/terms/</guid>
-      <description>&lt;p&gt;Add your terms here and set &lt;code&gt;draft: false&lt;/code&gt; to publish it. Otherwise, delete this file if you don&#39;t need it.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>TAPAS: Tricks to Accelerate (encrypted) Prediction As a Service</title>
-      <link>/publication/epaas/</link>
+      <link>amartya18x.github.io/publication/epaas/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/epaas/</guid>
+      <guid>amartya18x.github.io/publication/epaas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning Low Rank Representations</title>
-      <link>/publication/lr_layer/</link>
+      <link>amartya18x.github.io/publication/lr_layer/</link>
       <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/lr_layer/</guid>
+      <guid>amartya18x.github.io/publication/lr_layer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Optimizing Non-decomposable Measures with Deep Networks</title>
-      <link>/publication/non_dec/</link>
+      <link>amartya18x.github.io/publication/non_dec/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/non_dec/</guid>
+      <guid>amartya18x.github.io/publication/non_dec/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>NonConvexity of neural networks</title>
+      <link>amartya18x.github.io/post/nn_nonconvex/</link>
+      <pubDate>Sat, 01 Oct 2016 03:52:46 +0530</pubDate>
+      <guid>amartya18x.github.io/post/nn_nonconvex/</guid>
+      <description>&lt;p&gt;I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
+&lt;p&gt;To understand the reasoning, we have to argue that if the function has atleast two local minimas such that their mid-point is not a local minima, the function is non-convex. In formal terms, $$\text{If }\exists x,y \in Dom(f) \hspace{5pt }s.t.\hspace{5pt} g(x) = g(y) = 0 $$ and $$\forall z\in [x,y] \text{ s.t. } g(z) \neq 0  $$ where $g(x)$ is a subgradient at $x$ the function is non-convex.&lt;/p&gt;
+&lt;p&gt;This is pretty simple to follow from the Mid-point value theorem and the definition of convexity.&lt;/p&gt;
+&lt;p&gt;Consider a neural network  $F(\cdot)$ with a few layers and name three layers $L_1, L_2$ and $ L_3$ Consider nodes $a$ and $b$ in $L_1$ and $c$ and $d$ in $L_2$.Let the parameters connecting node $i$ to $j$ be called $w_{ij}$.&lt;/p&gt;
+&lt;p&gt;Thee arguement to the function can be thought of as $A=[\cdots w_{ac}, w_{ad}, \cdots , w_{bc}, w_{bd}\cdots]$ and the function evaluation as $f(A)$. Consider $B=[\cdots w_{ad}, w_{ac},\cdots, w_{bd}, w_{bc},  \cdots]$. I can claim that there exists a $B$ i.e. where $ w_{ad}, w_{ac}$ and $ w_{bd},  w_{bc} $  are swapped respectively, there exists an ordering of the other weights(permute the other edges) such that the function evaluation remains same. It is pretty easy to see how it can be true.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Look at the following picture where the reg edges come into one node and the green into another.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/before.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Before permutation!
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+For reference consider&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The first red edge coming out of the top left node as $w_{ac}$&lt;/li&gt;
+&lt;li&gt;The gree edge out of the same node as $w_{ad}$.&lt;/li&gt;
+&lt;li&gt;The red edge out of the second node in the same layer as  $w_{bc}$&lt;/li&gt;
+&lt;li&gt;The green edge out of the second node as   $ w_{bd} $.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Connect all edges coming in to $L_2$ from $L_1$ into node $d$ to node $c$ and vice versa and then shift the origin of  all outgoing edges from node $c$ to $L_3$ to node $d$ and vice versa. What you have acheived is the network that you would have achieved by holding the two nodes by your hand and manually exchanging their positions while keeping the connecting edges intact. And Voila! now you have $A, B \in dom(F)$ where $F(A) = F(B) $.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now look at them after the edges are shifted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/after.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    After permutation!
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The natural doubt you might suddenly have is &lt;code&gt;What about a linear network ? &lt;/code&gt;. Well, it is a well known fact that such a function can be stated as $F(x; A, b) = Ax + b$ for some matrix $A$ and vector $B$. And as you know, linear layers do not have a maxima or a minima and hence the whole assumption we made about having $g(x) = 0$ i.e. zero subgradients, do not hold. Thus, it does not contradict the statement given earlier.&lt;/p&gt;
+&lt;p&gt;We will also need to understand how it holds the other point about there existing some point between the local optimas such that it does not have the same value as the optima. To understand this lets look at simplified representation of $F(\cdot)$. Instead, of taking the weights of the edges to be the arguements of $F(\cdot)$, let the nodes be  the arguements.&lt;br&gt;
+$$F(n_{1,1}, n_{1, 2}, \cdots, n_{3,1}\cdots)$$
+where $n_{i, j}$ is the $j^{th}$ node in $i^{th}$ layer.
+$$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-1}$ is the weight connecting the $k^{th}$ node in ${i-1}^{th}$ layer to the $j^{th}$ node in layer $i$.&lt;/p&gt;
+&lt;p&gt;Note that the transformation from the earlier definition to this definition is many-to-one and not one-to-one, which is easy to guess because of the reduction in the number of parameters.&lt;/p&gt;
+&lt;p&gt;Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn&#39;t change it&#39;s value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What we can infer from this is that for each unique optimal value, there exists $\prod_{i=1}^k n_k!$ points in the parameter space that can achieve that local optima, where $n_k$ is the number of nodes in the $k^{th}$ layer. Turns out that the number of saddle points are exponentially more!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The above statement however holds true only when the values of the $n_k$ nodes in that layer are also distinct but I guess the idea is clear and it is more of discrete mathematics.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What this might look like is shown below. Note that this is not the loss function of a neural network but rather a function called Rastrigin function taken from wikipedia.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Rastrigin.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Many many optimas!
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;To observe that the points between the local minimas are suboptimal, you will probably have to figure something out more rigorous as I do not have a very tight arguement, but lets look at a very interesting intuition.&lt;/p&gt;
+&lt;p&gt;Let&#39;s assume that the function is convex. This would allow the function to be hit by jensen&#39;s inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
+We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn&#39;t really matter if they are unique or not). If you apply jensen&#39;s inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).&lt;/p&gt;
+&lt;p&gt;But notice that we are actually averaging all the permutations possible in a layer and thus what we will get is a set of arguements such that the nodes that belong to the same layer have the same value. To understand this look at the matrices below and assume one layer corresponds to a column. The two matrices are thus independant permutations of the two columns.[
+M_1=
+\begin{bmatrix}
+1 &amp;amp; 2 \\\&lt;br&gt;
+3 &amp;amp; 4
+\end{bmatrix}
+]&lt;/p&gt;
+&lt;p&gt;[
+M_2=
+\begin{bmatrix}
+3 &amp;amp; 4 \\\&lt;br&gt;
+1 &amp;amp; 2
+\end{bmatrix}
+]&lt;/p&gt;
+&lt;p&gt;[
+\frac{M_1 + M_2}{2}=
+\begin{bmatrix}
+2 &amp;amp; 3 \\\&lt;br&gt;
+2 &amp;amp; 3
+\end{bmatrix}
+]
+What this effectively means is that if the neural network was indeed convex, there would be a value which could be given to all nodes in a layer and yet the network would have represented a local optima. This is higly absurd and is very apparent if you consider a classification network where the final outputs should not have the same value in all nodes given some value in the input layer(which is also a part of the function arguement).&lt;/p&gt;
+&lt;p&gt;To generalize this to any neural network, you will have to look at the activation functions and their properties. The claim you will be trying to verify is that the average of two permutations of an optimal point need not be optimal.&lt;/p&gt;
+&lt;p&gt;I guess this was an interesting read. A very interesting thing this says is that&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn&#39;t it ?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I guess I haven&#39;t been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Strong Convexity and Strong Smoothness</title>
+      <link>amartya18x.github.io/post/strconvex/</link>
+      <pubDate>Thu, 15 Sep 2016 23:49:40 +0530</pubDate>
+      <guid>amartya18x.github.io/post/strconvex/</guid>
+      <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
+&lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&#39;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
+&lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
+&lt;p&gt;$$\frac{f(y)+f(x)}{2} \ge f(\frac{x+y}{2}) $$
+Note that this does not require the function to be differentiable. But, with differetiable functions, one can actually get an easier and more productive definition.&lt;/p&gt;
+&lt;h3 id=&#34;convex-differetiable-functions&#34;&gt;Convex differetiable functions&lt;/h3&gt;
+&lt;p&gt;$$ f(y) \ge f(x) + \langle \nabla f(x), y - x \rangle $$&lt;/p&gt;
+&lt;h3 id=&#34;subgradients&#34;&gt;Subgradients&lt;/h3&gt;
+&lt;p&gt;The interesting thing about this is that this can tolerate functions, which are not differntiable in a finite number of points. We need to define &lt;strong&gt;subgradients&lt;/strong&gt; for that though.&lt;/p&gt;
+&lt;p&gt;$$ g(x) = \{ g(x) | \langle g(x), x_0 - x\rangle \forall y \} $$&lt;/p&gt;
+&lt;p&gt;And hence let&#39;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have&lt;/p&gt;
+&lt;p&gt;$$ f(y) \ge f(x) + \langle  g(x), y - x \rangle $$&lt;/p&gt;
+&lt;h2 id=&#34;strongly-convex-function&#34;&gt;Strongly Convex function&lt;/h2&gt;
+&lt;p&gt;Now that we know of convex functions mathematically, it is intuitively a function such that if we draw a tangent plane(line in case of one variable), the function &lt;strong&gt;lies above the tangent plane&lt;/strong&gt; at all points. Mathematically, that would be&lt;/p&gt;
+&lt;p&gt;$$ f(y) \ge f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2 $$ and &lt;strong&gt;$\alpha$&lt;/strong&gt; is known as the strong convexity parameter. One can also, for doubly differntiable functions, say $ \nabla^2 f(x) \succeq \alpha I  $, where $\nabla^2 f(x)$ is the hessian matrix and $ I $ is the identity matrix.&lt;/p&gt;
+&lt;h2 id=&#34;strongly-smooth-function&#34;&gt;Strongly Smooth function&lt;/h2&gt;
+&lt;p&gt;A strongly smooth function is just the opposite of the strongly convex function i.e. a function which &lt;strong&gt;lies below the tangent plane&lt;/strong&gt; at all points. Mathematically, that would be&lt;/p&gt;
+&lt;p&gt;$$ f(y) \le f(x) + \langle g(x), y - x \rangle + \frac{\beta}{2} \| y - x\|^2 $$ and &lt;strong&gt;$\beta$&lt;/strong&gt; is known as the strong smoothness parameter. One can also, for doubly differntiable functions, say $ \beta I \succeq \nabla^2 f(x)  $.&lt;/p&gt;
+&lt;h1 id=&#34;gradient-descent-for-strongly-convex-functions&#34;&gt;Gradient descent for strongly convex functions&lt;/h1&gt;
+&lt;p&gt;We know for a strongly convex function $f(x)$, $$ f(y) \ge f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2 $$ A very nice property of these functions is that, we can actually bound $\|f( x^{*}) - f(x)\|$ where $(x^{*})$ is the optimal point , with the norm of the gradient ($\|\nabla f(x)\|$).
+Let,
+$$
+z = \underset{y}{argmin }\hspace{5pt}  \{ f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2 \}
+$$&lt;/p&gt;
+&lt;p&gt;The definition of strong convexity is applicable for all y.&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+z &amp;amp;= x - \frac{\nabla f(x)}{\alpha} \\&lt;br&gt;
+f(y) &amp;amp;\ge f(x) + \langle g(x), y - x \rangle + \frac{\alpha}{2} \| y - x\|^2  \\&lt;br&gt;
+&amp;amp;\ge f(x) + \langle g(x), \frac{\nabla f(x)}{\alpha}  \rangle + \frac{\alpha}{2} \| \frac{\nabla f(x)}{\alpha}  \|^2 \\&lt;br&gt;
+&amp;amp;\ge f(x) - \frac{1}{2\alpha} | \nabla f(x)|^2 \\&lt;br&gt;
+\therefore f(x^{*}) &amp;amp;\ge f(x) - \frac{1}{2\alpha} \| \nabla f(x)\|^2
+\end{align*}&lt;/p&gt;
+&lt;p&gt;This interesting bound also gives us a good convergence criterion. Set $f(x) - f(x^{*}) = \epsilon$ i.e. the desired error. We only need to do the gradient descent until the gradient has reached $2\alpha \epsilon$ from the previous inequality.
+$$
+2\alpha \epsilon \le \frac{1}{2\alpha} \| \nabla f(x)\|^2
+$$&lt;/p&gt;
+&lt;p&gt;Like the function value above, we can also get a bound on the distance of the current point from the optimal point in terms of gradient.&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+f(x^{*})  &amp;amp;\ge f(x) + \langle g(x), x^{*} - x \rangle + \frac{\alpha}{2} \| x^{*} - x\|^2  \\&lt;br&gt;
+&amp;amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;amp;&amp;amp; \text{(By Cauchy&#39;s inequality)}\\&lt;br&gt;
+\end{align*}
+As we know that $f(x^{*})$ is optimal $ f(x^{*}) \le f(x)$, a \ge 0 must be true.&lt;/p&gt;
+&lt;p&gt;$$ \| g(x)\|\| x^{*} - x \| \ge \frac{\alpha}{2} \| x^{*} - x\|^2  $$
+Or,
+$$\frac{2}{\alpha} \| g(x)\| \ge   \| x^{*} - x\|  $$&lt;/p&gt;
+&lt;h2 id=&#34;analyzing-the-gradient-descent&#34;&gt;Analyzing the gradient descent&lt;/h2&gt;
+&lt;p&gt;Define,
+$$
+\Phi_t = f(x^t) - f(x^{*})
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&#39;s also define another distance.
+$$
+D_t = \| x^{*} - x_t \|_2
+$$
+\begin{align*}
+\label{eq:phi}
+f(x^{*})  &amp;amp;\ge f(x_t) + \langle \nabla f(x_t), x^{*} - x_t \rangle + \frac{\alpha}{2} \| x^{*} - x_t\|^2  \\&lt;br&gt;
+f(x^{*}) -  f(x_t)  &amp;amp;\ge \hspace{2pt} \langle\nabla f(x_t), x^{*} - x_t \rangle + \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
+\end{align*}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hence, we have the following inequality with the lyapunov function.
+\begin{equation}
+\Phi_t \le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2
+\end{equation}
+Lets work with $D_t$ and then try to relate it with $\Phi_t$.
+\begin{align*}
+D^2_{t+1} &amp;amp;= \|x^{t+1} - x^{*} \|_2^2 \\&lt;br&gt;
+&amp;amp;= \| x^t - \eta_t g_t -   x^{*}\|_2^2 \\&lt;br&gt;
+&amp;amp; = \|x^t - x^{*} \|_2^2 + \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\&lt;br&gt;
+D^2_{t+1} - D^2_{t} &amp;amp;= \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\&lt;br&gt;
+\langle x^t - x^{*}, g_t\rangle &amp;amp;= \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2}
+\end{align*}
+Let&#39;s plugin in this onto the previous definition of the lyapunov function.
+\begin{align*}
+\Phi_t &amp;amp;\le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
+&amp;amp;\le \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
+&amp;amp;\le  \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t
+\end{align*}
+It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&#39;s inequality.
+\begin{align*}
+\sum_{t=0}^T \Phi_t &amp;amp;\le \sum_{t=0}^T (\frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) \\&lt;br&gt;
+&amp;amp;\le  \sum_{t=0}^T (\frac{D^2_t}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) -  \sum_{t=1} \frac{D^2_{t}}{2\eta_{t-1}} &amp;amp;&amp;amp; \text{(A bit of change of variable)} \\&lt;br&gt;
+&amp;amp;\le D_0^2(\frac{1}{2\eta_0} - \frac{\alpha}{2}) +  \sum_{t=1}^T D^2_t(\frac{1}{2\eta_t} - \frac{\alpha}{2} + \frac{1}{2\eta_{t-1}}) + \sum_{t=0}^T\frac{\eta_t G^2}{2} &amp;amp;&amp;amp;\text{(Assuming bounded gradients again)}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;Now, the first term is a constant and the third term is a sum of constants weighed by a parameter that we are fixing. So, the major problem is with the second term. Why note set it to zero ? We can do that by setting &lt;code&gt;$\eta\_t = \frac{1}{\alpha t}$&lt;/code&gt;
+\begin{align*}
+\sum_{t=0}^T \Phi_t &amp;amp;\le D_0^2(\underbrace{\frac{1}{2\eta_0} - \frac{\alpha}{2}}_{\le 0}) +  \sum_{t=1}^T D^2_t( \underbrace{\frac{1}{2\eta_t} - \frac{\alpha}{2} + \frac{1}{2\eta_{t-1}}}_0) + \sum_{t=0}^T\frac{ G^2}{2\alpha t} &amp;amp;&amp;amp;\text{(Assuming bounded gradients again)} \\&lt;br&gt;
+\frac{1}{T}\sum_{t=0}^T {\Phi_t} &amp;amp;\le \frac{G^2 log(T)}{2T} \\&lt;br&gt;
+\sum_{t=0}^T  \frac{f(x^t) - f(x^{*})}{T} &amp;amp;\le \frac{G^2 log(T)}{2T}  \\&lt;br&gt;
+\end{align*}
+Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+$$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{G^2 log(T)}{2T} $$
+To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&#39;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth&lt;/p&gt;
+&lt;h1 id=&#34;gradient-descent-for-strongly-smooth-functions&#34;&gt;Gradient descent for strongly smooth functions&lt;/h1&gt;
+&lt;p&gt;We will work with similar &lt;strong&gt;Lyapunov function&lt;/strong&gt; &lt;code&gt;$\Phi\_t$&lt;/code&gt; and &lt;code&gt;$D\_t$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;As $f(x)$ is strong smooth,
+$$ f(x^{t+1}) \le f(x^t) + \langle \nabla f(x^t), x^{t+1} - x^t \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 $$
+and as $f(x)$ is convex
+$$ f(x^{*}) \ge f(x) + \langle \nabla f(x), x^{*} - x \rangle  $$
+By rearranging terms we get,
+$$  f(x) \le f(x^{*})  + \langle \nabla f(x), x - x^{*}  \rangle  $$
+Plugging in this inequality into the strong smoothness inequality and replacing the $\Phi_{t+1}$ and $D_t$ in the correct places gives us the following&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\Phi_{t+1} &amp;amp;\le   \langle \nabla f(x), x^t - x^{*}\rangle + \langle \nabla f(x^t), x^{t+1} - x^t \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le  \langle \nabla f(x), x^t - x^{*} +  x^{t+1} - x^t \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le  \langle \nabla f(x),  x^{t+1} - x^{*} \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+\end{align*}&lt;/p&gt;
+&lt;p&gt;Now, we know the following &lt;code&gt;$x^{t+1} = x^t - \eta\_t \nabla f(x^t)$&lt;/code&gt; which gives us &lt;code&gt;$\nabla f(x^t) = \frac{x^t - x^{t+1}}{\eta\_t} $&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\Phi_{t+1} &amp;amp;\le  \langle \nabla f(x),  x^{t+1} - x^{*} \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le  \frac{1}{\eta_t}\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle + \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+\end{align*}
+Now, we need to evaluate the term &lt;code&gt;$\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle $&lt;/code&gt;
+\begin{align*}
+\|x^t - x^{*}\|^2 &amp;amp;= \|x^t - x^{t+1} + x^{t+1} - x^{*}\| \\&lt;br&gt;
+&amp;amp;=\|x^t - x^{t+1}\|^2 + \|x^{t+1} - x^{*}\| + 2\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle \\&lt;br&gt;
+\langle x^{t} - x^{t+1},  x^{t+1} - x^{*} \rangle &amp;amp;= \frac{1}{2}( D_{t}^2 - D_{t+1}^2 -  \|x^{t+1} - x^{*}\| )
+\end{align*}
+Plugging this back into the inequality we have above, we get the following&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\Phi_{t+1}     &amp;amp;\le  \frac{1}{2\eta_t} (D_{t}^2 - D_{t+1}^2 -  \frac{1}{2}\|x^{t+1} - x^{*}\| )+ \frac{\beta}{2} \| x^{t+1} - x^t \|^2 \\&lt;br&gt;
+&amp;amp;\le \frac{1}{2\eta_t} (D_{t}^2 - D_{t+1}^2) - \| x^{t+1} - x^t \|^2 (\frac{1}{2\eta_t} - \frac{\beta}{2})
+\end{align*}
+Set  $\eta_t = \frac{c}{\beta} $  where, $c\in [0,1]$ . We get($0 \ge k\le 1) $
+$$ (\frac{1}{2\eta_t} - \frac{\beta}{2}) = \frac{\beta}{2} (\frac{1}{k} - 1)\ge 0  $$&lt;/p&gt;
+&lt;p&gt;\begin{align*}
+\sum_{t=0}^T \Phi_{t+1} &amp;amp;\le \sum_{t=0}^T \frac{\beta}{2c} (D_{t}^2 - D_{t+1}^2)\\&lt;br&gt;
+\frac{1}{T} \sum_{t=0}^T \Phi_{t+1}  &amp;amp;\le \frac{\beta}{2cT} (D_{0}^2 - D_{T+1}^2)
+\end{align*}
+Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+$$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{\beta}{2cT} (D_{0}^2 ) $$&lt;/p&gt;
+&lt;p&gt;For both the strongly convex and the strong smooth functions, we have seen the average selector. Is it possible that some other selector can give us better bounds ? Selector refers to the particular way of choosing the $x$, which we want the function to return.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Montreal</title>
+      <link>amartya18x.github.io/post/montreal/</link>
+      <pubDate>Tue, 26 Jul 2016 18:29:14 +0100</pubDate>
+      <guid>amartya18x.github.io/post/montreal/</guid>
+      <description>&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/montreal.jpg&#34; data-caption=&#34;Montreal from Mont Royal&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/montreal.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Montreal from Mont Royal
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+As I said before, during the Summers of 2016, I went to Montreal to work as a Research Intern in MILA(Montreal Institute of Learning Algorithms) and there is no way I cannot admit, it was a very wonderful experience. Apart from being a very information-rich span of two and a half months, it was a very beautiful place to visit. In fact, it was too beautiful to not write a separate post about the non-technical experiences of my visit.
+Well, the process of acquiring the visa was not a very easy task. As a matter of fact, I got my visa in my hands a few hours before my departure, which was a few hours after my semesters ended. So, to understand the climate, it was a pretty tense and action packed couple of days. However, things went smoothly towards the end and I did get my visa and my flight in time and so, off I flew.
+It was a one hop flight to Montreal via Zurich and Zurich was probably even more beautiful than Montreal(atleast from the air and the terminal it was, where I had a 6 hrs stop). The airport seemed to be surrounded my mountains and forests and I landed there pretty early thus giving me a chance to catch a glimpse of the sunrise from behind the mountains. On my way to Zurich, I sat beside a swiss woman, who realizing I was on my first international travel kindly offered me the window seat. She was on her way from Bhutan, where her husband worked in an NGO, to Zurich. She read a book about the history of Bhutan throughout the journey. I slept. I woke up in time though to catch the sunrise.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Swiss.jpg&#34; data-caption=&#34;Zurich Sunrise&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Swiss.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Zurich Sunrise
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+In the next part of the journey, I was accompanied by a Quebecois boy, who was in Poland visiting his friends. I slept there too. Immigration through Montreal was pretty cool. However, when the Border Service Agent asked me my field of study, I had a difficult time trying to figure out what to say - Deep Learning, Machine Learning, Artificial Intelligence ? I said Computer Science though. She asked me if I write apps for iphone and I said yes. I also made the mistake of asking the agent if the swiss knife I had was a weapon, which made her frown quite a lot. I quickly explained that it was rusted and I never really used it other than cutting packets and it was not an original either. But the big problem was when she noticed I had ticked dried fruits in my immigration form. As my mother had packed them, I barely knew what was in it. So, I said it had cashew and some other stuff. And she asked , &amp;ldquo;What other stuff ?&amp;quot;. I said, &amp;ldquo;Buiscuits, raisins and some similar stuff.&amp;rdquo; She asked, &amp;ldquo;What similar stuff ?&amp;rdquo; I said, though I was sure I didnt have them, &amp;ldquo;Apricots probably.&amp;rdquo; And she asked, &amp;ldquo;Anything else?&amp;quot;. I said , &amp;ldquo;No! Just those.&amp;quot;. I still think she was expecting me to say, &amp;ldquo;Marijuana!!&amp;quot;. Why else would someone grill me regarding dried food in my bag.
+As I escaped immigration, the next part was getting to my apartment, which I had booked via Airbnb. I knew the address and so, I asked a police officer who asked me to take the bus and then a couple in the bus, who told me to get off the bus at Lionel Groulx(Mind you things were in French!) and take the metro and then an old man in the metro, who told me where to get off the metro and finally, I walked the rest of the way to my house. I must admit it felt pretty amazing that day to be in Montreal and I had a nice sleep(Inspite of sleeping all the way).
+The next day, I went to the local Metro(which is a grocery) and bought stuff, I thought I could manage with to satiate my intestines. It was an amazing walk and I noticed I stayed very close to the St. Joseph Oratoire. I didnt get a SIM card though. I thought it wasn&#39;t quite worth it as internet plans(i.e. ones which offered substantial amounts of data) were priced quite high and local calling wasn&#39;t very high on my demand list. Apparently, it didnt go as well for me.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Oratorie.jpg&#34; data-caption=&#34;St. Joseph Oratorie&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Oratorie.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    St. Joseph Oratorie
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+Pretty soon, I visited my University and went to my department. People were away for a conference when I got there and so, the first week went lightly trying to read some papers, know some people, read some code and do this and that. Pretty soon, things started in full pace and I began to love the whole idea of venturing into Research but that&#39;s a story for another day. A couple of weeks later,a few people from IAESTE(that&#39;s the organisation that helped me with the visa) met up(me included) and we went around boating in a canal at Le Charlevoux and then we went to Vieux Port(Old Port). I was amazed at the way Montreal had transformed a decaying buisness estate into a place for tourist attraction. We spent some time there and then walked the streets of Old Port which was so similar to the pictures I had seen of streets in Rome. We then had dinner at a place, where I had pasta with spiced bacon. I dont like pasta. That day, I loved it. There have been a few more sharp turns in my culinary tastes. Beefs, pork, aubergines - I absolutely loved the preparations I tasted there. My houseowner was a pretty awesome person. He introduced me to one another thing, I had definitely missed in life before going there - Backgammon. Being, a person who is absolutely fascinated by board games, backgammon was a totally awesome gift to my hobby-list. I played with him with quite often, usually on sundays. He took me to a friend of his, who also loved the game and we had a game in his well-maintained porch with cans of Apple Cidre. Once cannot not like the taste of Apple Cidres.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/cobble.jpg&#34; data-caption=&#34;Cobbled Streets&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/cobble.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Cobbled Streets
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The most awesome part of the trip was when and a friend of mine, who was also interning in the same university decided to go on a rather spontaneous unplanned trip to a village.(It&#39;s just a village, we had no idea which village.) All we wanted was to see the Canadian countryside and the Laurentians were quite close and it would have been a crime to miss them. So yes - a village in the Laurentians. it would have been similarly insane to not atleast spend a night there. Keeping these in mind, we decided to spend a night somewhere in the Laurentians and I searched for a place on Airbnb in the general vicinity of the Laurentians within a reasonable price and we stumbled a pretty house in the woods.
+We planned to get the morning metro to the Montmorency station and then a local bus to a village called St. Jerome, which also happened to be the starting place of a cycling path called Petit train du Nord(The small train of the North). It was initally a rail track, which they converted to a cycling path when the place went outdated. It had a beautiful terrain through the mountains finally ending in Mont Laurier. We wished to go though the tour, atleast partly, however it was too costly. So, back to our traevelling plans. It all went wrong when we woke up late and missed the first metro, which in turn made us miss the bus to St. Jerome and which in turn made us miss the bus to Val David. Oh! I really I havent told you where we were going. We were going to a small village that lies somewhere in the centre of Les Petit train du Nord called Val David.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Valdavid.jpg&#34; data-caption=&#34;Val David&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Valdavid.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Val David
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The good thing is, this forced us to spend some time in St. Jerome. There is a pretty little stream cutting through the village, a peculiar church(that somehow looked like a huge bakery to me), a contemporary art museum and a lot of people on cycle. Apparently, everyone was riding a cycle. Abled people rode high cycles, stunt cycles, mountain bikes or racing bikes. Differently abled people rode battery powered wheel chairs and some of them were pretty cool. We had a lunch of hot dog and vanilla Ice cream. it was a task in itself trying to order them as people didn&#39;t speak english in the place. It was mostly show-and-tell. We ended up buying tickets for a different bus and the bus was pretty luxurious. We sped through a road though the Laurentians. Laurentians is an old range and has hence eroded over time. It is a popular skiing place , not the right time though. There were patches of ski trails that were clearly visible though the woods. I have always loved woods and mountains more than oceans for the serenity and the colorful scenery it provides. Along with us on the highway, there were a lot of pickup trucks and most of them carried bicycles on their backs. These people were going to start cycling on the train from Mont Laurier(i.e. in the upper part of the Laurentians) and come down to St. Jerome. I will put that on my bucketlist for now. After a very short ride the bus dropped us off at the crossing of Val David. We were quite hungry and we noticed a Tim Hortons. Tim Hortons is the biggest fast food chain(takeaway food chain) in Canada and its quite better than the McDs there. I had some sandwich those guys made along with coffee and home fries. However, the girl at the counter forgot to add the fries and the coffee and charged us for the sandwich only. When I mentioned that I had asked for fries and coffee too, even after insisting repeatedly she didn&#39;t take our money and gave them to us for free. Somehow, I hold free food-givers quite high in my list of respected people. 
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Jerome.jpg&#34; data-caption=&#34;Starting point of Petit Train du Nord&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Jerome.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Starting point of Petit Train du Nord
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+Our house was some 5-6 km away i.e. inside Val David and there wasn&#39;t any public transport available. Assisted by google maps and hoping for free rides, we started walking. It was 6 and still bright. Curious as we were, we took a diversion when we saw a lake on the map. We walked via the cycling trail till we reached a lake and it was such a pretty lake. Then we noticed a regional parc near it and just to be clear parcs mean some kind of forests and so, we decided to make it to the parc. On reaching the parc, we asked the guard if we could go through the parc. He told us to come back tomorrow as it would get pretty dark soon and it wouldn&#39;t be safe. I remember him telling us there weren&#39;t many bear parc as the parc wasn&#39;t too big and we wondered , who would want to go hiking in a parc with bears and canadian bears are not the cute kind.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lake.jpg&#34; data-caption=&#34;A house by the lake&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/lake.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    A house by the lake
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+So, we walked back all the way and started walking towrds the house, which was still 5-6 kms away. It was possibly one of the most beautiful roads, I have ever walked on. There were curious little bungalows on either sides of the road, not too dense but one every once in a while. Some of the houses were pretty cool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/beautiful_house.jpg&#34; data-caption=&#34;A beautiful house&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/beautiful_house.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    A beautiful house
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+And on we went down the road for another couple of hours. Went by houses and lakes and a car once in a while too. A very sweet gesture, we noticed, of the people down there was that every one passing by us in a car would not at us. Nevertheless, amidst all these interesting nodding interactions, we reached the house, we were to stay in for the night. Dont go by the looks though. Old though it might look, it was pretty well furnished in the inside. When we reached, the hosts were out but we had the security key and so we let ourselves in, cleaned up and waited inside(a bit hesitant to use things) for the hosts to arrive.The house was backed by the woods and we slept that night staring out a huge window into a very dense wood. It was a bit scary and I am not ashamed to admit it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/house.jpg&#34; data-caption=&#34;House in the woods&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/house.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    House in the woods
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+Well, the next morning we walked all the way back to the Tim Hortons for breakfast(i.e. 2 and a half hours) and then walked to the parc and then began hiking. The parc had very human touch and it was dense forest with multiple trails crisscrossing through it. We went through one that led to a peak called Mt. Condor. We went to both the Nord(North) and Sud(South) quest of the peak. I had adopted a stick that day to help me deal with the big blood sucking flies/mosquitoes that appeared once in a while and appeared to have imprinted on me. I did read somewhere that this is because I have an attractive body odour. I doubt it though. It never works with any other being other than mosquitoes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Candor_me.jpg&#34; data-caption=&#34;Me with my stick&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Candor_me.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Me with my stick
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+To put things in a shell, I was highly impressed by the beauty and the serenity of the place and the friendliness of the place and also the fact that I scaled my first official peal(Only 440 metres though) 
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/trek.jpg&#34; data-caption=&#34;The trail&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/trek.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    The trail
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+The next few weeks went pretty quietly and busy with work. We,(Shivsankar and me), went out almost every night to visit parts of the city. We would often take the bus and get down somewhere and start walking. One night, before we had the bus pass,miser that we were, we didnt want to spend on a bus ticket and we walk almost 16km around Mont Royal to walk to our home. It was 1 am by the team we reached. Other days, we went to a pub called Randolph, which was a board games pub and it was so beautiful and we had grown a friendly acquaintance with the gamemasters, bartender and waiters. Randolph had been mine most frequently visited place in Montreal. I often wondered during my visits to the pub, how wonderful a job it was to teach people how to play board games and then get paid for it.(Canada also has some minimum wage law I guess) We would also take the Metro to other places like Place des Arts and St. Catherine etc.
+Another person, without whom the trip wouldn&#39;t have been as enjoyable as it was is Anirudh. We would often go out to eat(Not many times though). We went to a Jazz festival and I discovered I absolutely love Jazz music though it might have just been the concert effect. It was the grand show by Jamie Cullum and I loved the song When I get Famous. I also had another tasty pizza at an Italian Place, which I had previously visited with Shivsankar. I was totally amazed at the number of different kinds of pizza they had to offer and the number was around 70. Pizzas were quite different there than it is here. The crust is usually thinner and they have sie fillings beneath the cheese which forms a kind of layer and then they have some toppings on it. I dont understand why they want to eat it with fork. A couple of days, I went to a greek place, where I discovered another culinary sweetheart called Souvlaki in Tsaziki. I dont think I can do justice to that great dish by trying to describe it. So just google it and watch the imagies and drool. A few dys before I left, another guy from my lab Tanel Parnamaa finished his intern and went back to Estonia. So, we went out to see him off. We went to a Japanese Raman place and yes, it was awesome too. I believe I had octopus that day too. So, I tasted quite a lot different cuisines there including lebanese, portugese, french, peruvian, greek, thai, vietnamese, quebecoise and Italian. Maybe I will write a seperate post about the food there. It is just that I forget to take pictures before eating them.
+There was a place called Brulerie&#39;s and Luc de Lorraine quite close to the University. One should absolutely visit them. Brulerie is a really cheap place for weekdays early breakfast. It gives you a choice of meat, a couple of eggs(in whatever style), bread, home fries , fruits and unlimited coffee for only 7$, which is cheap. Don&#39;t convert it to INR. Just take my word for it that it is cheap. Luc de Lorraine is however pretty costly but serves absolutely delicious french lunch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Tanel.jpg&#34; data-caption=&#34;Dinner for Tanel with Dima, Anirudh, Krishna, Rosemary and Zander&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/Tanel.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Dinner for Tanel with Dima, Anirudh, Krishna, Rosemary and Zander
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+I had my parting dinner in a vegan thai place with some pretty awesome people including Anirudh, Ishmael, Zander, Rosemary and Krishna.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/my_dinner.jpg&#34; data-caption=&#34;My Dinner&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/my_dinner.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    My Dinner
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+I can&#39;t explain how badly I miss the place. It is an absolutely must-go place for - everyone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/candor_back.jpg&#34; data-caption=&#34;Will come back.&#34;&gt;
+&lt;img data-src=&#34;amartya18x.github.io/candor_back.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Will come back.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
     </item>
     
   </channel>
