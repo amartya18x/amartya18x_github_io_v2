@@ -5,12 +5,611 @@
     <link>amartya18x.github.io/</link>
       <atom:link href="amartya18x.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Amartya Sanyal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 23 Jan 2020 12:40:23 +0000</lastBuildDate>
     <image>
       <url>/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Amartya Sanyal</title>
       <link>amartya18x.github.io/</link>
     </image>
+    
+    <item>
+      <title>Robustness via Deep Low-Rank Representations</title>
+      <link>amartya18x.github.io/post/lr_layer/</link>
+      <pubDate>Thu, 23 Jan 2020 12:40:23 +0000</pubDate>
+      <guid>amartya18x.github.io/post/lr_layer/</guid>
+      <description>&lt;p&gt;In this paper (
+&lt;a href=&#34;https://arxiv.org/abs/1804.07090&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Full Paper here&lt;/a&gt;), we investigate the relation of the &lt;em&gt;intrinsic&lt;/em&gt; dimension of the representation space of deep networks with its robustness. To do this, we introduce an easy-to-implement, end-to-end trainable, scalable  regularizer that enforces low rank structure in the representation space of deep networks; we conduct a variety of experiments to show that the resultant network is largely robust to adversarial and random perturbations. In addition, the low &lt;em&gt;intrinsic&lt;/em&gt; dimension also means that the representations (and the model) can be compressed significantly without significant loss in accuracy.&lt;/p&gt;
+&lt;h3 id=&#34;low-rank-representations&#34;&gt;Low Rank Representations&lt;/h3&gt;
+&lt;div class=&#34;alert alert-hint&#34;&gt;
+  &lt;div&gt;
+    For most models trained in a supervised fashion, the vector of
+activations in the penultimate layer~(or a layer close to the penultimate layer) is a &lt;em&gt;learned&lt;/em&gt; representation of the raw input.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The remarkable success of DNNs is primarily attributed to the discriminative quality of this learned representation space. However, despite their impressive performance, DNNs are known to be brittle to input perturbations. This raises concerns regarding the robustness of the factors captured by the learned representation space of DNNs. But we know that the factors captured by dimensionality reduction techniques, while being discriminative, are robust to input perturbations. This motivates the thesis behind this work:&lt;/p&gt;
+&lt;div class=&#34;alert alert-hint&#34;&gt;
+  &lt;div&gt;
+    If we enforce DNNs to learn representations that lie in a low-dimensional subspace (for the entire dataset), we would obtain more robust classifiers while preserving their discriminative power.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Precisely, we propose a low-rank regularizor (LR) that&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;does not put any restriction on the network architecture.&lt;/li&gt;
+&lt;li&gt;is end-to-end trainable&lt;/li&gt;
+&lt;li&gt;is efficient in that it allows mini-batch training&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;and provides benefits;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;it increases the robustness against black box and white box version of various adversarial attacks.&lt;/li&gt;
+&lt;li&gt;the generated representations  are discriminative and can be compressed due to it having a low &lt;em&gt;intrinsic&lt;/em&gt; dimension.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;problem-formulation&#34;&gt;Problem Formulation&lt;/h3&gt;
+&lt;p&gt;Let $X = \{x_i\}_{i=1}^n$ and $Y = \{y_i\}_{i=1}^n$ be the set of inputs and outputs
+of a given training dataset. By slight abuse of notation, we
+define $A_\ell = f^{-}_\ell(X; \phi) =[a_1,\cdots,a_n]^\top\in \mathbb{R}^{n
+\times m}$ to be the activation matrix of the entire dataset, so
+that $a_i$ is the activation vector of the $i$-th sample. Note
+that for most practical purposes $n\gg m$. In this setting,
+the problem of learning low-rank representations can be
+formulated as a constrained optimization problem as follows:
+\begin{align}
+\label{eq:opt_prob}
+\min_{\theta, \phi}\mathcal{L}(X, Y; \theta,
+\phi),~\text{s.t.}~~\mathrm{rank}(A_\ell) = r,\end{align}
+where $\mathcal{L}(.)$ is the loss function and $r &amp;lt; m$ is the
+desired rank of the representations at layer $\ell$. The rank $r$ is a
+hyperparameter. However, there are a few problems with this formulation.&lt;/p&gt;
+&lt;p&gt;First, the rank constraint is on a matrix&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;whose size scales with dataset size.&lt;/li&gt;
+&lt;li&gt;which is not a parameter;&lt;/li&gt;
+&lt;li&gt;and it is not immediately clear if a Tikhonov regularizor exists that can achieve this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Second, minimizing the restriction of $A_\ell$ on a minibatch can result in orthogonal low rank spaces for each minibatch thus having a high dimensional subspace when all the minibatches are combined.&lt;/p&gt;
+&lt;p&gt;To mitigate these issues, we augment the initial problem as follows:&lt;/p&gt;
+&lt;h4 id=&#34;augemented-problem-our-low-rank-regularizer&#34;&gt;Augemented problem (our low rank regularizer)&lt;/h4&gt;
+&lt;p&gt;$$
+\min_{\theta, \phi, W, b} \mathcal{L}(X, Y; \theta, \phi) + \mathcal{L}_c(A_\ell; W,b) + \mathcal{L}_n(A_\ell)$$
+$$\text{s.t.,} W\in \mathbb{R}^{m\times m}, \mathrm{rank}(W) = r,~ b\in \mathbb{R}^m,A=f^{-}_\ell(X; \phi)
+$$
+where,
+$$
+\underbrace{\mathcal{L}_c(A; W, b) = \frac{1}{n} \sum_{i=1}^{n} \Big\|W^\top(a_i+b) - (a_i+b)\Big\|_2^2}_{\Large\text{Projection Loss}}$$
+$$ \text{and} \quad \underbrace{\mathcal{L}_n(A) = \frac{1}{n}\sum_{i=1}^n \Big|1 - \|a_i\| \Big|}_{\Large \text{Norm Loss}}$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Projetion Loss&lt;/strong&gt;: Minimizing the projection loss $\mathcal{L}_c$
+ensures that the affine low-rank mappings ($AW$) of the activations
+are close to the original ones i.e. $AW \approx A$. As $W$ is
+low-rank, recalling sub-multiplicity of rank - $\mathrm{rank}(AW)\le \mathrm{min}(\mathrm{rank}(A),\mathrm{rank}(W))$,  $AW$ is also low-rank; thus implicitly~(due to
+$AW\approx A$) it forces the original activations $A$ to
+be low-rank. The bias $b$ allows for the activations to be translated before
+projection.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Norm Loss&lt;/strong&gt;: However note that setting $A$ and $b$ close to zero trivially minimizes $\mathcal{L}_c$, especially when the activation dimension is large. We observed this to happen in practice as it is easier for the network to learn $\phi$ such that the activations and the bias are very small in order to minimize $\mathcal{L}_c$. To prevent this, we use $\mathcal{L}_n$ that acts as a norm constraint on the activation vector to keep the activations sufficiently large.&lt;/p&gt;
+&lt;p&gt;Intuitively, we learn a &lt;em&gt;virtual layer i.e.&lt;/em&gt;($W,b$) during training that does two things.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Learns a &lt;strong&gt;very&lt;/strong&gt; low dimensional subspace that captures a large fraction of the information present in the representations/activations of the network on the training data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Learns to encourage the representations/activations to lie as much as possible entirely on this low dimensional subspace.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;adversarial-robustness-of-our-method&#34;&gt;Adversarial Robustness of our method&lt;/h3&gt;
+&lt;p&gt;We recall that adversarial perturbations are well crafted~(almost
+imperceptible) input perturbations that, when added to a clean input, flips the prediction
+of the model on the input to an incorrect
+one.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/adv_pig.png&#34; data-caption=&#34;An example of an image of a pig that is initially correctly classified by a classifier. On adding a small impertible perturbation, the same classifier mis-classifies it as an airliner. [a]&#34;&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/adv_pig.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    An example of an image of a pig that is initially correctly classified by a classifier. On adding a small impertible perturbation, the same classifier mis-classifies it as an airliner. &lt;a href=&#39;#adv_ref&#39;&gt;[a]&lt;/a&gt;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;We look at the adversarial robustness of our model as compared to a vanilla model i.e. one without our regularizor; and also with some other methods that impose constraints on the parameter space. We test it against two main adversaries -&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;one that is computationally constrained where we measure the success of the adversarial attack for different computational budgets,&lt;/li&gt;
+&lt;li&gt;computationally unconstrained where we measure the amount of perturbation necessary for $99%$ mis-classification.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Computationally Constrained Adversary&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In the table below, we measure the adversarial accuracy of a ResNet50 model trained on the CIFAR10 dataset against an untargeted $\ell_{\infty}$  PGD adversary with the computational constraints (i.e. attack budgets measured in terms of $\ell_\infty$ radius and att. steps. Higher these values, stronger is the adversary.) The table  shows that our Low Rank regularizer has a much higher test accuracy than any of the other methods used.&lt;/p&gt;
+&lt;table  class=&#34;table&#34;  fgcolor=&#34;white&#34; &gt;
+&lt;caption &gt;ResNet50 trained on CIFAR10. Low Rank uses our regularizor; SNIP &lt;a href=&#34;#section1&#34;&gt;[1]&lt;/a&gt; is a pruning technique to to  enforce sparsity in parameters and SRN&lt;a href=&#34;#section2&#34;&gt; [2]&lt;/a&gt; is a technique to introduce a soft low rank structure in the parameter space.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr bgcolor=&#34;white&#34;&gt;
+      &lt;th style=&#34;width:12.5%&#34; scope=&#34;col&#34;&gt;Algorithm&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; colspan=8 style=&#34;width:87.5%&#34; scope=&#34;col&#34;&gt;Adversarial Test Accuracy&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr bgcolor=&#34;white&#34;&gt;
+      &lt;th style=&#34;width:12.5%&#34; scope=&#34;col&#34;&gt;$\ell_\infty$ radius&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; colspan=2 style=&#34;width:21.875%&#34; scope=&#34;col&#34;&gt;&lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;255&lt;/sub&gt;&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; colspan=2 style=&#34;width:21.875%&#34; scope=&#34;col&#34;&gt;&lt;sup&gt;10&lt;/sup&gt;&amp;frasl;&lt;sub&gt;255&lt;/sub&gt;&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; colspan=2 style=&#34;width:21.875%&#34; scope=&#34;col&#34;&gt;&lt;sup&gt;16&lt;/sup&gt;&amp;frasl;&lt;sub&gt;255&lt;/sub&gt;&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; colspan=2 style=&#34;width:21.875%&#34; scope=&#34;col&#34;&gt;&lt;sup&gt;20&lt;/sup&gt;&amp;frasl;&lt;sub&gt;255&lt;/sub&gt;&lt;/th&gt;
+     &lt;/tr&gt;
+     &lt;tr bgcolor=&#34;white&#34;&gt;	
+      &lt;th style=&#34;width:12.5%&#34; scope=&#34;col&#34;&gt;Att. steps&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;7&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;20&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;7&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;20&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;7&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;20&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;7&lt;/th&gt;
+      &lt;th class=&#34;text-center&#34; style=&#34;width:10.9375%&#34; scope=&#34;col&#34;&gt;20&lt;/th&gt;
+     &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr bgcolor=&#34;white&#34;&gt;
+  &lt;th  scope=&#34;row&#34;&gt;Vanilla&lt;/th&gt;
+  &lt;td&gt; 43.1 &lt;/td&gt;
+  &lt;td&gt; 31.0  &lt;/td&gt;
+  &lt;td&gt; 38.5 &lt;/td&gt;
+  &lt;td&gt; 21.8 &lt;/td&gt;
+  &lt;td&gt; 31.2 &lt;/td&gt;
+  &lt;td&gt; 7.8   &lt;/td&gt;
+  &lt;td&gt; 28.9 &lt;/td&gt;
+  &lt;td&gt; 4.5 &lt;/td&gt; 
+    &lt;/tr&gt;
+    &lt;tr  bgcolor=&#34;white&#34;&gt;
+      &lt;th scope=&#34;row&#34;&gt;SNIP &lt;a href=&#34;#section1&#34;&gt;[1]&lt;/a&gt; &lt;/th&gt;
+     &lt;td&gt;   29.4 &lt;/td&gt;
+     &lt;td&gt; 14.5  &lt;/td&gt;
+     &lt;td&gt; 25.0 &lt;/td&gt;
+     &lt;td&gt; 8.0 &lt;/td&gt;
+     &lt;td&gt; 18.5 &lt;/td&gt;
+     &lt;td&gt; 1.3  &lt;/td&gt;
+     &lt;td&gt; 16.2 &lt;/td&gt;
+     &lt;td&gt; 0.4 &lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr  bgcolor=&#34;white&#34;&gt;
+      &lt;th scope=&#34;row&#34;&gt;SRN &lt;a href=&#34;#section1&#34;&gt;[2]&lt;/a&gt; &lt;/th&gt;
+    &lt;td&gt; 47.8&lt;/td&gt;
+    &lt;td&gt; 37.6&lt;/td&gt;
+    &lt;td&gt; 44.4&lt;/td&gt;
+    &lt;td&gt; 31.4&lt;/td&gt;
+    &lt;td&gt; 39.8&lt;/td&gt;
+    &lt;td&gt;  21.3&lt;/td&gt;
+    &lt;td&gt; 37.5&lt;/td&gt;
+    &lt;td&gt; 18.4&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr bgcolor=&#34;white&#34;&gt; 
+      &lt;th scope=&#34;row&#34;&gt;Low Rank (Ours)&lt;/th&gt;
+    &lt;td&gt; $\mathbf{79.1}$ &lt;/td&gt;
+    &lt;td&gt; $\mathbf{78.5}$  &lt;/td&gt;
+    &lt;td&gt; $\mathbf{78.6}$ &lt;/td&gt;
+    &lt;td&gt; $\mathbf{78.1}$  &lt;/td&gt;
+    &lt;td&gt; $\mathbf{77.9}$ &lt;/td&gt;
+    &lt;td&gt; $\mathbf{77.0}$  &lt;/td&gt;
+    &lt;td&gt; $\mathbf{77.1}$ &lt;/td&gt;
+    &lt;td&gt; $\mathbf{76.6}$ &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Computationally UnConstrained Adversary (Deepfool) &lt;a href=&#34;#section3&#34;&gt; [3]&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We also look at the amount of adversarial perturbation that is necessary to fool our classifier as opposed to a vanilla model. Measured numerically, ours requires an order of magnitude more than normal models. Please refer to our paper for the exact values. If visualized, the images appear as below and the adversarial images for teh Low-Rank model (LR) are significantly more different from the original model than those for the vanilla model.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Original Image&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Vanilla Model&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Low Rank Model&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/orig_1.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/orig_1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/N-LR_1.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/N-LR_1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/2-LR_1.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/2-LR_1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/orig_3.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/orig_3.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/N-LR_3.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/N-LR_3.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/2-LR_3.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/2-LR_3.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;noise-stability&#34;&gt;Noise Stability&lt;/h3&gt;
+&lt;p&gt;We explain this robustness by showing that the noise-stability of the low rank representations are much more than those of vanilla models. More specifically, we show two different experiments&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;b&gt; Random Pixel Perturbation: &lt;/b&gt; When a random subset (each pixel is chosen iid with probability $p$)  of the pixels of a image are perturbed with a random multi-variate gaussian noise, the test accuracy of our low-rank models drops much slower than that of a vanilla model.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Pert. Prob. $p$&lt;/th&gt;
+&lt;th&gt;$0.4$&lt;/th&gt;
+&lt;th&gt;$0.6$&lt;/th&gt;
+&lt;th&gt;$0.8$&lt;/th&gt;
+&lt;th&gt;$1.0$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Vanilla&lt;/td&gt;
+&lt;td&gt;$69.7$&lt;/td&gt;
+&lt;td&gt;$26.1$&lt;/td&gt;
+&lt;td&gt;$12.6$&lt;/td&gt;
+&lt;td&gt;$11.3$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Low-Rank (Ours)&lt;/td&gt;
+&lt;td&gt;$\mathbf{75.1}$&lt;/td&gt;
+&lt;td&gt;$\mathbf{34.2}$&lt;/td&gt;
+&lt;td&gt;$\mathbf{15.8}$&lt;/td&gt;
+&lt;td&gt;$\mathbf{13.0}$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;2.&lt;b&gt; Noise-Stability of Representations:&lt;/b&gt; We measure the ratio of the norm of the perturbation induced in the representation space with to the norm of the perturbation in the input space for adversarial perturbations. In the following diagram, x-axis measures $$\text{x-axis}:\dfrac{\|\delta\|_2^2}{\|x\|_2^2}\quad \text{y-axis}:\dfrac{\|f_\ell^{-}(x+\delta) - f_\ell^{-}(x)\|_2^2}{\|f_\ell^{-}(x)\|_2^2}$$
+White box attacks are attacks where the perturbation is constructed using the model to be attacked, black box models are attacks where the vanilla model is used to construct the attack.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;White Box Attack&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Black Box Attack&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/pert_legend.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/pert_legend.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/pert_comp_fig.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/pert_comp_fig.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/bb_pert_comp_fig.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/bb_pert_comp_fig.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;further-observations-in-the-paper&#34;&gt;Further observations in the paper&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Layer Cusion&lt;/strong&gt;: Arora et. al  &lt;a href=&#34;#section4&#34;&gt; [4]&lt;/a&gt; define a quantity called layer cushion, which is intuitively the reciprocal of noise-sensitivity to random gaussian noise measured on the real dataset. We measure this quantity for all our networks and show that this quantity is much higher for our networks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compressing Representations&lt;/strong&gt;: Due to the low &lt;em&gt;intrinsic dimension&lt;/em&gt; of the low rank representations, even after aggressive compression ($400x$) outhe low rank model looses only $6\%$ in accuracy as opposed to the vanilla model which looses more than $27\%$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compressing Models&lt;/strong&gt;: We also throw away the latter parts of the model (after the low rank representation) and train a small linear model ($8M$ replaced with $160k$ parameters) yielding less than $1\%$ drop in accuracy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discriminative Representations&lt;/strong&gt;: When visualized with PCA (and colored according to classes), the low rank model yields representations that are more discriminative in nature in the sense that a low dimensional lienar classifier can classify it with a much larger margin than for vanilla models.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Vanilla Model&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Low Rank Model&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/coarse_label_PCA_NLR.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/coarse_label_PCA_NLR.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lr_layer/coarse_label_PCA.png&#34; &gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lr_layer/coarse_label_PCA.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For the full paper refer to &lt;a href=&#34;https://arxiv.org/abs/1804.07090&#34;&gt;https://arxiv.org/abs/1804.07090&lt;/a&gt;.&lt;/p&gt;
+&lt;p style=&#34;font-size:11px&#34; id=&#34;adv_ref&#34;&gt; [a] Picture taken from https://medium.com/@smkirthishankar/the-unusual-effectiveness-of-adversarial-attacks-e1314d0fa4d3 &lt;/p&gt;
+&lt;p style=&#34;font-size:11px&#34;  id=&#34;section1&#34;&gt;[1] Lee, Namhoon, Thalaiyasingam Ajanthan, and Philip HS Torr. &#34;Snip: Single-shot network pruning based on connection sensitivity.&#34; International Conference on Learning Representations (2019). &lt;/p&gt;
+&lt;p style=&#34;font-size:11px&#34;  id=&#34;section1&#34;&gt;[2] Sanyal, Amartya, Philip HS Torr, and Puneet K. Dokania. &#34;Stable Rank Normalization for Improved Generalization in Neural Networks and GANs.&#34;  International Conference on Learning Representations (2020). &lt;/p&gt;
+&lt;p style=&#34;font-size:11px&#34;  id=&#34;section3&#34;&gt;[3] Moosavi-Dezfooli, Seyed-Mohsen, Alhussein Fawzi, and Pascal Frossard. &#34;Deepfool: a simple and accurate method to fool deep neural networks.&#34; Proceedings of the IEEE conference on computer vision and pattern recognition. 2016. &lt;/p&gt;
+&lt;p style=&#34;font-size:11px&#34;  id=&#34;section4&#34;&gt;[4] Arora, Sanjeev, et al. &#34;Stronger generalization bounds for deep nets via a compression approach.&#34; arXiv preprint arXiv:1802.05296 (2018). &lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Stable Rank Normalization for Improved Generalization in Neural Networks and GANs</title>
