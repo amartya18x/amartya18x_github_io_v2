@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Amartya Sanyal</title>
-    <link>amartya18x.github.io/tags/academic/</link>
-      <atom:link href="amartya18x.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://amartya18x.github.io/tags/academic/</link>
+      <atom:link href="https://amartya18x.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
     <description>Amartya Sanyal</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2016 03:52:46 +0530</lastBuildDate>
     <image>
-      <url>/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Amartya Sanyal</title>
-      <link>amartya18x.github.io/tags/academic/</link>
+      <link>https://amartya18x.github.io/tags/academic/</link>
     </image>
     
     <item>
       <title>NonConvexity of neural networks</title>
-      <link>amartya18x.github.io/post/nn_nonconvex/</link>
+      <link>https://amartya18x.github.io/post/nn_nonconvex/</link>
       <pubDate>Sat, 01 Oct 2016 03:52:46 +0530</pubDate>
-      <guid>amartya18x.github.io/post/nn_nonconvex/</guid>
+      <guid>https://amartya18x.github.io/post/nn_nonconvex/</guid>
       <description>&lt;p&gt;I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
 &lt;p&gt;To understand the reasoning, we have to argue that if the function has atleast two local minimas such that their mid-point is not a local minima, the function is non-convex. In formal terms, $$\text{If }\exists x,y \in Dom(f) \hspace{5pt }s.t.\hspace{5pt} g(x) = g(y) = 0 $$ and $$\forall z\in [x,y] \text{ s.t. } g(z) \neq 0  $$ where $g(x)$ is a subgradient at $x$ the function is non-convex.&lt;/p&gt;
 &lt;p&gt;This is pretty simple to follow from the Mid-point value theorem and the definition of convexity.&lt;/p&gt;
@@ -43,10 +43,10 @@
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
 
 
-  &lt;img src=&#34;amartya18x.github.io/before.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;https://amartya18x.github.io/before.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -87,10 +87,10 @@ For reference consider&lt;/p&gt;
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
 
 
-  &lt;img src=&#34;amartya18x.github.io/after.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;https://amartya18x.github.io/after.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -136,10 +136,10 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
 
 
-  &lt;img src=&#34;amartya18x.github.io/Rastrigin.png&#34; alt=&#34;&#34;  &gt;
+  &lt;img src=&#34;https://amartya18x.github.io/Rastrigin.png&#34; alt=&#34;&#34;  &gt;
 &lt;/a&gt;
 
 
@@ -188,9 +188,9 @@ What this effectively means is that if the neural network was indeed convex, the
     
     <item>
       <title>Strong Convexity and Strong Smoothness</title>
-      <link>amartya18x.github.io/post/strconvex/</link>
+      <link>https://amartya18x.github.io/post/strconvex/</link>
       <pubDate>Thu, 15 Sep 2016 23:49:40 +0530</pubDate>
-      <guid>amartya18x.github.io/post/strconvex/</guid>
+      <guid>https://amartya18x.github.io/post/strconvex/</guid>
       <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
 &lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&#39;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
 &lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;

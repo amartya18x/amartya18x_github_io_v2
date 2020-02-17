@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Adria Gascon | Amartya Sanyal</title>
-    <link>amartya18x.github.io/authors/adria-gascon/</link>
-      <atom:link href="amartya18x.github.io/authors/adria-gascon/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://amartya18x.github.io/authors/adria-gascon/</link>
+      <atom:link href="https://amartya18x.github.io/authors/adria-gascon/index.xml" rel="self" type="application/rss+xml" />
     <description>Adria Gascon</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Adria Gascon</title>
-      <link>amartya18x.github.io/authors/adria-gascon/</link>
+      <link>https://amartya18x.github.io/authors/adria-gascon/</link>
     </image>
     
     <item>
       <title>TAPAS: Tricks to Accelerate (encrypted) Prediction As a Service</title>
-      <link>amartya18x.github.io/publication/epaas/</link>
+      <link>https://amartya18x.github.io/publication/epaas/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      <guid>amartya18x.github.io/publication/epaas/</guid>
+      <guid>https://amartya18x.github.io/publication/epaas/</guid>
       <description></description>
     </item>
     
