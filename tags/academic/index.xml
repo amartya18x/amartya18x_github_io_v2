@@ -38,11 +38,16 @@
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/before.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/before.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -77,11 +82,16 @@ For reference consider&lt;/p&gt;
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/after.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/after.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -121,11 +131,16 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Rastrigin.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Rastrigin.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   

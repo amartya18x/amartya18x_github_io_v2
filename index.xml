@@ -70,11 +70,16 @@
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/before.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/before.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -109,11 +114,16 @@ For reference consider&lt;/p&gt;
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/after.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/after.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -153,11 +163,16 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Rastrigin.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Rastrigin.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -362,11 +377,16 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/montreal.jpg&#34; data-caption=&#34;Montreal from Mont Royal&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/montreal.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/montreal.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -394,11 +414,16 @@ It was a one hop flight to Montreal via Zurich and Zurich was probably even more
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Swiss.jpg&#34; data-caption=&#34;Zurich Sunrise&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Swiss.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Swiss.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -426,11 +451,16 @@ The next day, I went to the local Metro(which is a grocery) and bought stuff, I 
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Oratorie.jpg&#34; data-caption=&#34;St. Joseph Oratorie&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Oratorie.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Oratorie.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -456,11 +486,16 @@ Pretty soon, I visited my University and went to my department. People were away
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/cobble.jpg&#34; data-caption=&#34;Cobbled Streets&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/cobble.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/cobble.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -487,11 +522,16 @@ We planned to get the morning metro to the Montmorency station and then a local 
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Valdavid.jpg&#34; data-caption=&#34;Val David&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Valdavid.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Valdavid.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -516,11 +556,16 @@ The good thing is, this forced us to spend some time in St. Jerome. There is a p
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Jerome.jpg&#34; data-caption=&#34;Starting point of Petit Train du Nord&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Jerome.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Jerome.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -546,11 +591,16 @@ Our house was some 5-6 km away i.e. inside Val David and there wasn&#39;t any pu
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/lake.jpg&#34; data-caption=&#34;A house by the lake&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/lake.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/lake.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -576,11 +626,16 @@ So, we walked back all the way and started walking towrds the house, which was s
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/beautiful_house.jpg&#34; data-caption=&#34;A beautiful house&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/beautiful_house.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/beautiful_house.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -606,11 +661,16 @@ And on we went down the road for another couple of hours. Went by houses and lak
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/house.jpg&#34; data-caption=&#34;House in the woods&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/house.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/house.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -636,11 +696,16 @@ Well, the next morning we walked all the way back to the Tim Hortons for breakfa
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Candor_me.jpg&#34; data-caption=&#34;Me with my stick&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Candor_me.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Candor_me.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -665,11 +730,16 @@ To put things in a shell, I was highly impressed by the beauty and the serenity 
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/trek.jpg&#34; data-caption=&#34;The trail&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/trek.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/trek.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -697,11 +767,16 @@ There was a place called Brulerie&#39;s and Luc de Lorraine quite close to the U
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/Tanel.jpg&#34; data-caption=&#34;Dinner for Tanel with Dima, Anirudh, Krishna, Rosemary and Zander&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/Tanel.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/Tanel.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -727,11 +802,16 @@ I had my parting dinner in a vegan thai place with some pretty awesome people in
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/my_dinner.jpg&#34; data-caption=&#34;My Dinner&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/my_dinner.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/my_dinner.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
@@ -757,11 +837,16 @@ I can&#39;t explain how badly I miss the place. It is an absolutely must-go plac
 
 
 
+
+
 &lt;figure&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;amartya18x.github.io/candor_back.jpg&#34; data-caption=&#34;Will come back.&#34;&gt;
-&lt;img data-src=&#34;amartya18x.github.io/candor_back.jpg&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
+
+
+  &lt;img src=&#34;amartya18x.github.io/candor_back.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
 
 
   
