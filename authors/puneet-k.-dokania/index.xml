@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>3 | Amartya Sanyal</title>
-    <link>https://amartya18x.github.io/publication_types/3/</link>
-      <atom:link href="https://amartya18x.github.io/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
-    <description>3</description>
+    <title>Puneet K. Dokania | Amartya Sanyal</title>
+    <link>https://amartya18x.github.io/authors/puneet-k.-dokania/</link>
+      <atom:link href="https://amartya18x.github.io/authors/puneet-k.-dokania/index.xml" rel="self" type="application/rss+xml" />
+    <description>Puneet K. Dokania</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>3</title>
-      <link>https://amartya18x.github.io/publication_types/3/</link>
+      <title>Puneet K. Dokania</title>
+      <link>https://amartya18x.github.io/authors/puneet-k.-dokania/</link>
     </image>
     
     <item>
@@ -17,14 +17,6 @@
       <link>https://amartya18x.github.io/publication/lr_layer/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://amartya18x.github.io/publication/lr_layer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Optimizing Non-decomposable Measures with Deep Networks</title>
-      <link>https://amartya18x.github.io/publication/non_dec/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/publication/non_dec/</guid>
       <description></description>
     </item>
     

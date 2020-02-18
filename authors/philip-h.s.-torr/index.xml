@@ -5,7 +5,7 @@
     <link>https://amartya18x.github.io/authors/philip-h.s.-torr/</link>
       <atom:link href="https://amartya18x.github.io/authors/philip-h.s.-torr/index.xml" rel="self" type="application/rss+xml" />
     <description>Philip H.S. Torr</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Philip H.S. Torr</title>
@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>Stable Rank Normalization for Improved Generalization in Neural Networks and GANs</title>
-      <link>https://amartya18x.github.io/publication/stable/</link>
-      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/publication/stable/</guid>
+      <title>Robustness via Deep Low-Rank Representations</title>
+      <link>https://amartya18x.github.io/publication/lr_layer/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/publication/lr_layer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Learning Low Rank Representations</title>
-      <link>https://amartya18x.github.io/publication/lr_layer/</link>
-      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/publication/lr_layer/</guid>
+      <title>Stable Rank Normalization for Improved Generalization in Neural Networks and GANs</title>
+      <link>https://amartya18x.github.io/publication/stable/</link>
+      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/publication/stable/</guid>
       <description></description>
     </item>
     

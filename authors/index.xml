@@ -5,7 +5,7 @@
     <link>https://amartya18x.github.io/authors/</link>
       <atom:link href="https://amartya18x.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Amartya Sanyal</title>
       <link>https://amartya18x.github.io/authors/amartya-sanyal/</link>
-      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://amartya18x.github.io/authors/amartya-sanyal/</guid>
       <description></description>
     </item>
@@ -23,8 +23,24 @@
     <item>
       <title>Philip H.S. Torr</title>
       <link>https://amartya18x.github.io/authors/philip-h.s.-torr/</link>
-      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://amartya18x.github.io/authors/philip-h.s.-torr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Puneet K. Dokania</title>
+      <link>https://amartya18x.github.io/authors/puneet-k.-dokania/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/authors/puneet-k.-dokania/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Varun Kanade</title>
+      <link>https://amartya18x.github.io/authors/varun-kanade/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/authors/varun-kanade/</guid>
       <description></description>
     </item>
     
@@ -49,14 +65,6 @@
       <link>https://amartya18x.github.io/authors/matt-kusner/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       <guid>https://amartya18x.github.io/authors/matt-kusner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Varun Kanade</title>
-      <link>https://amartya18x.github.io/authors/varun-kanade/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/varun-kanade/</guid>
       <description></description>
     </item>
     
