@@ -75,7 +75,7 @@ hyperparameter. However, there are a few problems with this formulation.&lt;/p&g
 &lt;/ul&gt;
 &lt;p&gt;Second, minimizing the restriction of $A_\ell$ on a minibatch can result in orthogonal low rank spaces for each minibatch thus having a high dimensional subspace when all the minibatches are combined.&lt;/p&gt;
 &lt;p&gt;To mitigate these issues, we augment the initial problem as follows:&lt;/p&gt;
-&lt;h4 id=&#34;augemented-problem-our-low-rank-regularizer&#34;&gt;Augemented problem (our low rank regularizer)&lt;/h4&gt;
+&lt;h4 id=&#34;augmented-problem-our-low-rank-regularizer&#34;&gt;Augmented problem (our low rank regularizer)&lt;/h4&gt;
 &lt;p&gt;$$
 \min_{\theta, \phi, W, b} \mathcal{L}(X, Y; \theta, \phi) + \mathcal{L}_c(A_\ell; W,b) + \mathcal{L}_n(A_\ell)$$
 $$\text{s.t.,} W\in \mathbb{R}^{m\times m}, \mathrm{rank}(W) = r,~ b\in \mathbb{R}^m,A=f^{-}_\ell(X; \phi)
@@ -84,7 +84,7 @@ where,
 $$
 \underbrace{\mathcal{L}_c(A; W, b) = \frac{1}{n} \sum_{i=1}^{n} \Big\|W^\top(a_i+b) - (a_i+b)\Big\|_2^2}_{\Large\text{Projection Loss}}$$
 $$ \text{and} \quad \underbrace{\mathcal{L}_n(A) = \frac{1}{n}\sum_{i=1}^n \Big|1 - \|a_i\| \Big|}_{\Large \text{Norm Loss}}$$&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Projetion Loss&lt;/strong&gt;: Minimizing the projection loss $\mathcal{L}_c$
+&lt;p&gt;&lt;strong&gt;Projection Loss&lt;/strong&gt;: Minimizing the projection loss $\mathcal{L}_c$
 ensures that the affine low-rank mappings ($AW$) of the activations
 are close to the original ones i.e. $AW \approx A$. As $W$ is
 low-rank, recalling sub-multiplicity of rank - $\mathrm{rank}(AW)\le \mathrm{min}(\mathrm{rank}(A),\mathrm{rank}(W))$,  $AW$ is also low-rank; thus implicitly~(due to
@@ -102,7 +102,7 @@ projection.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;optimizing-the-loss&#34;&gt;Optimizing the Loss&lt;/h4&gt;
-&lt;p&gt;We optimize the loss using an alternate minimization scheme. During forward pass, the loss from the three components $\mathcal{L}, \mathcal{L}_c,\mathcal{L}_n$ are backpropagated through the network. Every $10$ iteration, $W$ is rank thesholded using  column-sampled ensembled Nyström SVD, which is essentially an approximate SVD.&lt;/p&gt;
+&lt;p&gt;We optimize the loss using an alternate minimization scheme. During forward pass, the loss from the three components $\mathcal{L}, \mathcal{L}_c,\mathcal{L}_n$ are back-propagated through the network. Every $10$ iteration, $W$ is rank thresholded using  column-sampled ensembled Nyström SVD, which is essentially an approximate SVD.&lt;/p&gt;
 
 
 
