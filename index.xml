@@ -18,7 +18,88 @@
       <pubDate>Thu, 23 Jan 2020 12:40:23 +0000</pubDate>
       <guid>https://amartya18x.github.io/post/lr_layer/</guid>
       <description>&lt;p&gt;In this paper (
-&lt;a href=&#34;https://arxiv.org/abs/1804.07090v5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Full Paper here&lt;/a&gt;), we investigate the relation of the &lt;em&gt;intrinsic&lt;/em&gt; dimension of the representation space of deep networks with its robustness. To do this, we introduce an easy-to-implement, end-to-end trainable, scalable  regularizer that enforces low rank structure in the representation space of deep networks; we conduct a variety of experiments to show that the resultant network is largely robust to adversarial and random perturbations. In addition, the low &lt;em&gt;intrinsic&lt;/em&gt; dimension also means that the representations (and the model) can be compressed significantly without significant loss in accuracy.&lt;/p&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1804.07090v5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Full Paper here&lt;/a&gt;), we investigate the relation of the &lt;em&gt;intrinsic&lt;/em&gt; dimension of the representation space of deep networks with its robustness.&lt;/p&gt;
+&lt;h1 id=&#34;objective-tldr&#34;&gt;Objective (TL;DR)&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/vis_normal_class/vis_normal_class.001.jpeg&#34; &gt;
+
+
+  &lt;img src=&#34;https://amartya18x.github.io/lr_layer/vis_normal_class/vis_normal_class.001.jpeg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations. We draw inspiration from classical dimensionality reduction techniques and introduce an algorithm to learn robust low rank features without changing the NN architectures.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/vis_lr_class/vis_lr_class.001.jpeg&#34; data-caption=&#34;Training uses an additional LR Layer, which encourages the Neural Network features to be low rank. During inference, this extra layer is thrown away and the NN features are already low rank.&#34;&gt;
+
+
+  &lt;img src=&#34;https://amartya18x.github.io/lr_layer/vis_lr_class/vis_lr_class.001.jpeg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Training uses an additional LR Layer, which encourages the Neural Network features to be low rank. During inference, this extra layer is thrown away and the NN features are already low rank.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To do this, we introduce an easy-to-implement, end-to-end trainable, scalable  regularizer (LR Layer) that enforces low rank structure in the representation space of deep networks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We conduct a variety of experiments to show that the resultant network is largely robust to adversarial and random perturbations without any adversarial training.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In addition, the low &lt;em&gt;intrinsic&lt;/em&gt; dimension also means that the representations (and the model) can be compressed significantly (almost 400x) without significant loss in accuracy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;tlsr&#34;&gt;TL;SR&lt;/h1&gt;
 &lt;h3 id=&#34;low-rank-representations&#34;&gt;Low Rank Representations&lt;/h3&gt;
 &lt;div class=&#34;alert alert-hint&#34;&gt;
   &lt;div&gt;
