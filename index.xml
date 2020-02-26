@@ -241,7 +241,7 @@ one.&lt;/p&gt;
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/adv_pig.png&#34; data-caption=&#34;An example of an image of a pig that is initially correctly classified by a classifier. On adding a small impertible perturbation, the same classifier mis-classifies it as an airliner. [a]&#34;&gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/adv_pig.png&#34; data-caption=&#34;An example of an image of a pig that is initially correctly classified by a classifier. On adding a small imperceptible perturbation, the same classifier mis-classifies it as an airliner. [a]&#34;&gt;
 
 
   &lt;img src=&#34;https://amartya18x.github.io/lr_layer/adv_pig.png&#34; alt=&#34;&#34;  &gt;
@@ -251,7 +251,7 @@ one.&lt;/p&gt;
   
   
   &lt;figcaption&gt;
-    An example of an image of a pig that is initially correctly classified by a classifier. On adding a small impertible perturbation, the same classifier mis-classifies it as an airliner. &lt;a href=&#39;#adv_ref&#39;&gt;[a]&lt;/a&gt;
+    An example of an image of a pig that is initially correctly classified by a classifier. On adding a small imperceptible perturbation, the same classifier mis-classifies it as an airliner. &lt;a href=&#39;#adv_ref&#39;&gt;[a]&lt;/a&gt;
   &lt;/figcaption&gt;
 
 
