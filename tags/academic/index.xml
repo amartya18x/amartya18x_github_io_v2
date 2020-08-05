@@ -5,7 +5,7 @@
     <link>https://amartya18x.github.io/tags/academic/</link>
       <atom:link href="https://amartya18x.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
     <description>Amartya Sanyal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2016 03:52:46 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Amartya Sanyal</title>
@@ -17,7 +17,7 @@
       <link>https://amartya18x.github.io/post/nn_nonconvex/</link>
       <pubDate>Sat, 01 Oct 2016 03:52:46 +0530</pubDate>
       <guid>https://amartya18x.github.io/post/nn_nonconvex/</guid>
-      <description>&lt;p&gt;I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
+      <description>&lt;p&gt;I don&amp;rsquo;t remember where I heard this arguement but it was a pretty interesting one and I couldn&amp;rsquo;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&amp;rsquo;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
 &lt;p&gt;To understand the reasoning, we have to argue that if the function has atleast two local minimas such that their mid-point is not a local minima, the function is non-convex. In formal terms, $$\text{If }\exists x,y \in Dom(f) \hspace{5pt }s.t.\hspace{5pt} g(x) = g(y) = 0 $$ and $$\forall z\in [x,y] \text{ s.t. } g(z) \neq 0  $$ where $g(x)$ is a subgradient at $x$ the function is non-convex.&lt;/p&gt;
 &lt;p&gt;This is pretty simple to follow from the Mid-point value theorem and the definition of convexity.&lt;/p&gt;
 &lt;p&gt;Consider a neural network  $F(\cdot)$ with a few layers and name three layers $L_1, L_2$ and $ L_3$ Consider nodes $a$ and $b$ in $L_1$ and $c$ and $d$ in $L_2$.Let the parameters connecting node $i$ to $j$ be called $w_{ij}$.&lt;/p&gt;
@@ -40,7 +40,10 @@
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-before-permutation&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
@@ -84,7 +87,10 @@ For reference consider&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-after-permutation&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
@@ -110,7 +116,7 @@ $$F(n_{1,1}, n_{1, 2}, \cdots, n_{3,1}\cdots)$$
 where $n_{i, j}$ is the $j^{th}$ node in $i^{th}$ layer.
 $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-1}$ is the weight connecting the $k^{th}$ node in ${i-1}^{th}$ layer to the $j^{th}$ node in layer $i$.&lt;/p&gt;
 &lt;p&gt;Note that the transformation from the earlier definition to this definition is many-to-one and not one-to-one, which is easy to guess because of the reduction in the number of parameters.&lt;/p&gt;
-&lt;p&gt;Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn&#39;t change it&#39;s value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.&lt;/p&gt;
+&lt;p&gt;Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn&amp;rsquo;t change it&amp;rsquo;s value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What we can infer from this is that for each unique optimal value, there exists $\prod_{i=1}^k n_k!$ points in the parameter space that can achieve that local optima, where $n_k$ is the number of nodes in the $k^{th}$ layer. Turns out that the number of saddle points are exponentially more!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -133,7 +139,10 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-many-many-optimas&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
@@ -153,8 +162,8 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 &lt;/figure&gt;
 
 &lt;p&gt;To observe that the points between the local minimas are suboptimal, you will probably have to figure something out more rigorous as I do not have a very tight arguement, but lets look at a very interesting intuition.&lt;/p&gt;
-&lt;p&gt;Let&#39;s assume that the function is convex. This would allow the function to be hit by jensen&#39;s inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
-We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn&#39;t really matter if they are unique or not). If you apply jensen&#39;s inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s assume that the function is convex. This would allow the function to be hit by jensen&amp;rsquo;s inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
+We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn&amp;rsquo;t really matter if they are unique or not). If you apply jensen&amp;rsquo;s inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).&lt;/p&gt;
 &lt;p&gt;But notice that we are actually averaging all the permutations possible in a layer and thus what we will get is a set of arguements such that the nodes that belong to the same layer have the same value. To understand this look at the matrices below and assume one layer corresponds to a column. The two matrices are thus independant permutations of the two columns.[
 M_1=
 \begin{bmatrix}
@@ -180,9 +189,9 @@ What this effectively means is that if the neural network was indeed convex, the
 &lt;p&gt;To generalize this to any neural network, you will have to look at the activation functions and their properties. The claim you will be trying to verify is that the average of two permutations of an optimal point need not be optimal.&lt;/p&gt;
 &lt;p&gt;I guess this was an interesting read. A very interesting thing this says is that&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn&#39;t it ?&lt;/p&gt;
+&lt;p&gt;A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn&amp;rsquo;t it ?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I guess I haven&#39;t been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!&lt;/p&gt;
+&lt;p&gt;I guess I haven&amp;rsquo;t been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!&lt;/p&gt;
 </description>
     </item>
     
@@ -191,8 +200,8 @@ What this effectively means is that if the neural network was indeed convex, the
       <link>https://amartya18x.github.io/post/strconvex/</link>
       <pubDate>Thu, 15 Sep 2016 23:49:40 +0530</pubDate>
       <guid>https://amartya18x.github.io/post/strconvex/</guid>
-      <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
-&lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&#39;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
+      <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&amp;rsquo;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
+&lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&amp;rsquo;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
 &lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
 &lt;p&gt;$$\frac{f(y)+f(x)}{2} \ge f(\frac{x+y}{2}) $$
 Note that this does not require the function to be differentiable. But, with differetiable functions, one can actually get an easier and more productive definition.&lt;/p&gt;
@@ -201,7 +210,7 @@ Note that this does not require the function to be differentiable. But, with dif
 &lt;h3 id=&#34;subgradients&#34;&gt;Subgradients&lt;/h3&gt;
 &lt;p&gt;The interesting thing about this is that this can tolerate functions, which are not differntiable in a finite number of points. We need to define &lt;strong&gt;subgradients&lt;/strong&gt; for that though.&lt;/p&gt;
 &lt;p&gt;$$ g(x) = \{ g(x) | \langle g(x), x_0 - x\rangle \forall y \} $$&lt;/p&gt;
-&lt;p&gt;And hence let&#39;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have&lt;/p&gt;
+&lt;p&gt;And hence let&amp;rsquo;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have&lt;/p&gt;
 &lt;p&gt;$$ f(y) \ge f(x) + \langle  g(x), y - x \rangle $$&lt;/p&gt;
 &lt;h2 id=&#34;strongly-convex-function&#34;&gt;Strongly Convex function&lt;/h2&gt;
 &lt;p&gt;Now that we know of convex functions mathematically, it is intuitively a function such that if we draw a tangent plane(line in case of one variable), the function &lt;strong&gt;lies above the tangent plane&lt;/strong&gt; at all points. Mathematically, that would be&lt;/p&gt;
@@ -230,7 +239,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Like the function value above, we can also get a bound on the distance of the current point from the optimal point in terms of gradient.&lt;/p&gt;
 &lt;p&gt;\begin{align*}
 f(x^{*})  &amp;amp;\ge f(x) + \langle g(x), x^{*} - x \rangle + \frac{\alpha}{2} \| x^{*} - x\|^2  \\&lt;br&gt;
-&amp;amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;amp;&amp;amp; \text{(By Cauchy&#39;s inequality)}\\&lt;br&gt;
+&amp;amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;amp;&amp;amp; \text{(By Cauchy&amp;rsquo;s inequality)}\\&lt;br&gt;
 \end{align*}
 As we know that $f(x^{*})$ is optimal $ f(x^{*}) \le f(x)$, a \ge 0 must be true.&lt;/p&gt;
 &lt;p&gt;$$ \| g(x)\|\| x^{*} - x \| \ge \frac{\alpha}{2} \| x^{*} - x\|^2  $$
@@ -242,7 +251,7 @@ $$
 \Phi_t = f(x^t) - f(x^{*})
 $$&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&#39;s also define another distance.
+&lt;li&gt;the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&amp;rsquo;s also define another distance.
 $$
 D_t = \| x^{*} - x_t \|_2
 $$
@@ -264,13 +273,13 @@ D^2_{t+1} &amp;amp;= \|x^{t+1} - x^{*} \|_2^2 \\&lt;br&gt;
 D^2_{t+1} - D^2_{t} &amp;amp;= \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\&lt;br&gt;
 \langle x^t - x^{*}, g_t\rangle &amp;amp;= \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2}
 \end{align*}
-Let&#39;s plugin in this onto the previous definition of the lyapunov function.
+Let&amp;rsquo;s plugin in this onto the previous definition of the lyapunov function.
 \begin{align*}
 \Phi_t &amp;amp;\le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
 &amp;amp;\le \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
 &amp;amp;\le  \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t
 \end{align*}
-It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&#39;s inequality.
+It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&amp;rsquo;s inequality.
 \begin{align*}
 \sum_{t=0}^T \Phi_t &amp;amp;\le \sum_{t=0}^T (\frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) \\&lt;br&gt;
 &amp;amp;\le  \sum_{t=0}^T (\frac{D^2_t}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) -  \sum_{t=1} \frac{D^2_{t}}{2\eta_{t-1}} &amp;amp;&amp;amp; \text{(A bit of change of variable)} \\&lt;br&gt;
@@ -282,9 +291,9 @@ It is difficult to show that $\Phi_t$ is going to zero. It is considerably easie
 \frac{1}{T}\sum_{t=0}^T {\Phi_t} &amp;amp;\le \frac{G^2 log(T)}{2T} \\&lt;br&gt;
 \sum_{t=0}^T  \frac{f(x^t) - f(x^{*})}{T} &amp;amp;\le \frac{G^2 log(T)}{2T}  \\&lt;br&gt;
 \end{align*}
-Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+Applying Jensen&amp;rsquo;s inequality because $\Phi_t$ is convex
 $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{G^2 log(T)}{2T} $$
-To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&#39;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth&lt;/p&gt;
+To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&amp;rsquo;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth&lt;/p&gt;
 &lt;h1 id=&#34;gradient-descent-for-strongly-smooth-functions&#34;&gt;Gradient descent for strongly smooth functions&lt;/h1&gt;
 &lt;p&gt;We will work with similar &lt;strong&gt;Lyapunov function&lt;/strong&gt; &lt;code&gt;$\Phi\_t$&lt;/code&gt; and &lt;code&gt;$D\_t$&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;As $f(x)$ is strong smooth,
@@ -321,7 +330,7 @@ $$ (\frac{1}{2\eta_t} - \frac{\beta}{2}) = \frac{\beta}{2} (\frac{1}{k} - 1)\ge 
 \sum_{t=0}^T \Phi_{t+1} &amp;amp;\le \sum_{t=0}^T \frac{\beta}{2c} (D_{t}^2 - D_{t+1}^2)\\&lt;br&gt;
 \frac{1}{T} \sum_{t=0}^T \Phi_{t+1}  &amp;amp;\le \frac{\beta}{2cT} (D_{0}^2 - D_{T+1}^2)
 \end{align*}
-Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+Applying Jensen&amp;rsquo;s inequality because $\Phi_t$ is convex
 $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{\beta}{2cT} (D_{0}^2 ) $$&lt;/p&gt;
 &lt;p&gt;For both the strongly convex and the strong smooth functions, we have seen the average selector. Is it possible that some other selector can give us better bounds ? Selector refers to the particular way of choosing the $x$, which we want the function to return.&lt;/p&gt;
 </description>

@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.7.0">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
 
+  
+
+  
   
 
   
@@ -21,7 +23,7 @@
   
   
 
-  <meta name="author" content="Amartya Sanyal">
+  
 
   
   
@@ -29,7 +31,7 @@
     
   
   <meta name="description" content="In this paper ( Full Paper here), we investigate the relation of the intrinsic dimension of the representation space of deep networks with its robustness.
-Objective (TL;DR)  Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.       While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations.">
+Objective (TL;DR)  Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.      While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://amartya18x.github.io/post/lr_layer/">
@@ -54,7 +56,7 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
@@ -67,8 +69,8 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -80,6 +82,13 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
     
 
     
+    
+      
+
+      
+      
+
+      
     
       
 
@@ -196,7 +205,11 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
   
 
   
@@ -214,6 +227,9 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
 
 
   
+  
+
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
@@ -221,6 +237,8 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
 
   <link rel="canonical" href="https://amartya18x.github.io/post/lr_layer/">
 
+  
+  
   
   
   
@@ -239,13 +257,13 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
   <meta property="og:url" content="https://amartya18x.github.io/post/lr_layer/">
   <meta property="og:title" content="Robustness via Deep Low-Rank Representations | Amartya Sanyal">
   <meta property="og:description" content="In this paper ( Full Paper here), we investigate the relation of the intrinsic dimension of the representation space of deep networks with its robustness.
-Objective (TL;DR)  Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.       While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations."><meta property="og:image" content="https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+Objective (TL;DR)  Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.      While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations."><meta property="og:image" content="https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-01-23T12:40:23&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-02-26T12:29:12&#43;00:00">
+    <meta property="article:modified_time" content="2020-08-05T13:36:19&#43;01:00">
   
 
   
@@ -274,7 +292,7 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
   "headline": "Robustness via Deep Low-Rank Representations",
   
   "datePublished": "2020-01-23T12:40:23Z",
-  "dateModified": "2020-02-26T12:29:12Z",
+  "dateModified": "2020-08-05T13:36:19+01:00",
   
   "author": {
     "@type": "Person",
@@ -289,7 +307,7 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
       "url": "https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "In this paper ( Full Paper here), we investigate the relation of the intrinsic dimension of the representation space of deep networks with its robustness.\nObjective (TL;DR)  Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.       While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations."
+  "description": "In this paper ( Full Paper here), we investigate the relation of the intrinsic dimension of the representation space of deep networks with its robustness.\nObjective (TL;DR)  Classical machine learning uses dimensionality reduction techniques like PCA to increase the robustness as well as compressibility of data representations.      While, modern neural networks are highly successful in a large number of tasks, they have been shown to be vulnerable to input perturbations."
 }
 </script>
 
@@ -310,7 +328,6 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
   <title>Robustness via Deep Low-Rank Representations | Amartya Sanyal</title>
 
 </head>
-
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
@@ -329,7 +346,7 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -346,6 +363,8 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
 
 
   
+
+
 
 
 
@@ -537,14 +556,10 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
-      
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-      </li>
       
 
       
@@ -579,8 +594,6 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
   <h1>Robustness via Deep Low-Rank Representations</h1>
 
   
-  <p class="page-subtitle">Amartya Sanyal, Varun Kanade, Puneet K. Dokania, Philip HS. Torr</p>
-  
 
   
     
@@ -588,6 +601,16 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
 
 <div class="article-metadata">
 
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span >Amartya Sanyal</span>, <span >Puneet K. Dokania</span>, <span >Varun Kanade</span>, <span >Philip H.S. Torr</span>
+  </div>
   
   
 
@@ -599,7 +622,7 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
           Last updated on
       
     
-    Feb 26, 2020
+    Aug 5, 2020
   </span>
   
 
@@ -668,7 +691,10 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/vis_normal_class/vis_normal_class.001.jpeg" >
@@ -699,7 +725,10 @@ Objective (TL;DR)  Classical machine learning uses dimensionality reduction tech
 
 
 
-<figure>
+
+
+
+<figure id="figure-training-uses-an-additional-lr-layer-which-encourages-the-neural-network-features-to-be-low-rank-during-inference-this-extra-layer-is-thrown-away-and-the-nn-features-are-already-low-rank">
 
 
   <a data-fancybox="" href="/lr_layer/vis_lr_class/vis_lr_class.001.jpeg" data-caption="Training uses an additional LR Layer, which encourages the Neural Network features to be low rank. During inference, this extra layer is thrown away and the NN features are already low rank.">
@@ -829,7 +858,10 @@ projection.</p>
 
 
 
-<figure>
+
+
+
+<figure id="figure-forward-and-backward-pass-through-our-regularizor">
 
 
   <a data-fancybox="" href="/lr_layer/LR_fw_back.png" data-caption="Forward and backward pass through our regularizor.">
@@ -868,10 +900,13 @@ one.</p>
 
 
 
-<figure>
 
 
-  <a data-fancybox="" href="/lr_layer/adv_pig.png" data-caption="An example of an image of a pig that is initially correctly classified by a classifier. On adding a small imperceptible perturbation, the same classifier mis-classifies it as an airliner. [a]">
+
+<figure id="figure-an-example-of-an-image-of-a-pig-that-is-initially-correctly-classified-by-a-classifier-on-adding-a-small-imperceptible-perturbation-the-same-classifier-mis-classifies-it-as-an-airliner-a-hrefadv_refaa">
+
+
+  <a data-fancybox="" href="/lr_layer/adv_pig.png" data-caption="An example of an image of a pig that is initially correctly classified by a classifier. On adding a small imperceptible perturbation, the same classifier mis-classifies it as an airliner. &lt;a href=&#39;#adv_ref&#39;&gt;[a]&lt;/a&gt;">
 
 
   <img src="/lr_layer/adv_pig.png" alt=""  >
@@ -994,7 +1029,10 @@ one.</p>
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/orig_1.png" >
@@ -1022,7 +1060,10 @@ one.</p>
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/N-LR_1.png" >
@@ -1050,7 +1091,10 @@ one.</p>
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/2-LR_1.png" >
@@ -1080,7 +1124,10 @@ one.</p>
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/orig_3.png" >
@@ -1108,7 +1155,10 @@ one.</p>
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/N-LR_3.png" >
@@ -1136,7 +1186,10 @@ one.</p>
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/2-LR_3.png" >
@@ -1211,7 +1264,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/pert_legend.png" >
@@ -1239,7 +1295,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/pert_comp_fig.png" >
@@ -1267,7 +1326,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/bb_pert_comp_fig.png" >
@@ -1314,7 +1376,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/coarse_label_PCA_NLR.png" >
@@ -1342,7 +1407,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-<figure>
+
+
+
+<figure >
 
 
   <a data-fancybox="" href="/lr_layer/coarse_label_PCA.png" >
@@ -1367,6 +1435,7 @@ White box attacks are attacks where the perturbation is constructed using the mo
     </div>
 
     
+
 
 
 
@@ -1468,114 +1537,51 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
   
+    
+    
 
 
 
 
 
+  
+
 
   
-  
-  
     
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hue776a334b902d7828bf5c7a8aa11ccb3_924185_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
-    <div class="media-body">
-      <h5 class="card-title"><a href="https://amartya18x.github.io/">Amartya Sanyal</a></h5>
-      <h6 class="card-subtitle">DPhil (PhD) Student in Computer Science</h6>
-      <p class="card-text">I am interested in  understanding the behaviours of deep neural networks and designing practical algorithms to avoid some of its unwanted artifacts.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    <li>
-      <a href="mailto:amartya18x@gmail.com" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://twitter.com/AmartyaSanyal" target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=cRLqsyYAAAAJ" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/amartya18x" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/files/cv.pdf" >
-        <i class="ai ai-cv"></i>
-      </a>
-    </li>
-  
-</ul>
 
-    </div>
-  </div>
+
+
+
+  
+
+
+  
+    
+    
+
+
+
+
+
+  
+
+
+  
+    
+    
+
+
+
+
+
+  
+
+
+  
+
 
 
 
@@ -1613,8 +1619,7 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-  
-  
+
 
 
 
@@ -1626,20 +1631,21 @@ White box attacks are attacks where the perturbation is constructed using the mo
     
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js" integrity="sha256-JEqEejGt4tR35L0a1zodzsV0/PJ6GIf7J4yDtywdrH8=" crossorigin="anonymous" title="mermaid"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
         
       
 
@@ -1673,7 +1679,8 @@ White box attacks are attacks where the perturbation is constructed using the mo
         'post': "Posts",
         'project': "Projects",
         'publication' : "Publications",
-        'talk' : "Talks"
+        'talk' : "Talks",
+        'slides' : "Slides"
         };
     </script>
     
@@ -1707,6 +1714,9 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
     
     
+
+    
+    
     <script id="dsq-count-scr" src="https://amartyasanyal.disqus.com/count.js" async></script>
     
 
@@ -1724,7 +1734,7 @@ White box attacks are attacks where the perturbation is constructed using the mo
     
     
     
-    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
 
     
 
@@ -1741,10 +1751,21 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
   <p class="powered-by">
     
+  </p>
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
 
     
     <span class="float-right" aria-hidden="true">

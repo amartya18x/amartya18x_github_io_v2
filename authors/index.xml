@@ -5,103 +5,12 @@
     <link>https://amartya18x.github.io/authors/</link>
       <atom:link href="https://amartya18x.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
       <link>https://amartya18x.github.io/authors/</link>
     </image>
-    
-    <item>
-      <title>Amartya Sanyal</title>
-      <link>https://amartya18x.github.io/authors/amartya-sanyal/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/amartya-sanyal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Philip H.S. Torr</title>
-      <link>https://amartya18x.github.io/authors/philip-h.s.-torr/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/philip-h.s.-torr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Puneet K. Dokania</title>
-      <link>https://amartya18x.github.io/authors/puneet-k.-dokania/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/puneet-k.-dokania/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Varun Kanade</title>
-      <link>https://amartya18x.github.io/authors/varun-kanade/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/varun-kanade/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Puneet K Dokania</title>
-      <link>https://amartya18x.github.io/authors/puneet-k-dokania/</link>
-      <pubDate>Thu, 19 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/puneet-k-dokania/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Adria Gascon</title>
-      <link>https://amartya18x.github.io/authors/adria-gascon/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/adria-gascon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matt kusner</title>
-      <link>https://amartya18x.github.io/authors/matt-kusner/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/matt-kusner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pawan Kumar</title>
-      <link>https://amartya18x.github.io/authors/pawan-kumar/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/pawan-kumar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Purushottam Kar</title>
-      <link>https://amartya18x.github.io/authors/purushottam-kar/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/purushottam-kar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sanjay Chawla</title>
-      <link>https://amartya18x.github.io/authors/sanjay-chawla/</link>
-      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/sanjay-chawla/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://amartya18x.github.io/authors/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/authors/admin/</guid>
-      <description>&lt;h1 id=&#34;biography&#34;&gt;Biography&lt;/h1&gt;
-&lt;p&gt;I am Amartya Sanyal, currently a D.Phil(PhD) student at the Department of Computer Science at the &lt;em&gt;University of Oxford&lt;/em&gt; working with Prof. Varun Kanade and Prof. Phil H.S. Torr. I completed by Bachelor Of Technology in Computer Science And Engineering from the &lt;em&gt;Indian Institute of Technology, Kanpur&lt;/em&gt; in 2017.&lt;/p&gt;
-&lt;p&gt;I am interested in understanding why &lt;em&gt;Deep Neural Networks&lt;/em&gt;, in whatever form, perform as good as they do. My research revolves around understanding mathematical properties regarding the structures of these networks and designing and analysing optimization algorithms that can exploit their properties. In the process, I also hope to come up with some practical applications using these findings. I am also interested in Optimization and Learning Theory in general.&lt;/p&gt;
-</description>
-    </item>
     
   </channel>
 </rss>

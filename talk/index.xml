@@ -12,5 +12,21 @@
       <link>https://amartya18x.github.io/talk/</link>
     </image>
     
+    <item>
+      <title>Stable Rank Normalization for Improved Generalization in Neural Networks and GANs</title>
+      <link>https://amartya18x.github.io/talk/iclr2020/</link>
+      <pubDate>Mon, 27 Apr 2020 15:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/talk/iclr2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Benign is Benign Overfitting</title>
+      <link>https://amartya18x.github.io/talk/iitkbenign/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/talk/iitkbenign/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

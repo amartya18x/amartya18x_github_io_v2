@@ -5,12 +5,36 @@
     <link>https://amartya18x.github.io/publication_types/3/</link>
       <atom:link href="https://amartya18x.github.io/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>3</title>
       <link>https://amartya18x.github.io/publication_types/3/</link>
     </image>
+    
+    <item>
+      <title>How Benign is Benign Overfitting?</title>
+      <link>https://amartya18x.github.io/publication/benign/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/publication/benign/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Progressive Skeletonization: Trimming more fat from a network at initialization</title>
+      <link>https://amartya18x.github.io/publication/force/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/publication/force/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Calibrating Deep Neural Networks using Focal Loss</title>
+      <link>https://amartya18x.github.io/publication/calibration/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/publication/calibration/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Robustness via Deep Low-Rank Representations</title>

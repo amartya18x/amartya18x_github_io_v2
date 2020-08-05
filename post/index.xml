@@ -38,7 +38,10 @@
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/vis_normal_class/vis_normal_class.001.jpeg&#34; &gt;
@@ -69,7 +72,10 @@
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-training-uses-an-additional-lr-layer-which-encourages-the-neural-network-features-to-be-low-rank-during-inference-this-extra-layer-is-thrown-away-and-the-nn-features-are-already-low-rank&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/vis_lr_class/vis_lr_class.001.jpeg&#34; data-caption=&#34;Training uses an additional LR Layer, which encourages the Neural Network features to be low rank. During inference, this extra layer is thrown away and the NN features are already low rank.&#34;&gt;
@@ -199,7 +205,10 @@ projection.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-forward-and-backward-pass-through-our-regularizor&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/LR_fw_back.png&#34; data-caption=&#34;Forward and backward pass through our regularizor.&#34;&gt;
@@ -238,10 +247,13 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/adv_pig.png&#34; data-caption=&#34;An example of an image of a pig that is initially correctly classified by a classifier. On adding a small imperceptible perturbation, the same classifier mis-classifies it as an airliner. [a]&#34;&gt;
+
+&lt;figure id=&#34;figure-an-example-of-an-image-of-a-pig-that-is-initially-correctly-classified-by-a-classifier-on-adding-a-small-imperceptible-perturbation-the-same-classifier-mis-classifies-it-as-an-airliner-a-hrefadv_refaa&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/adv_pig.png&#34; data-caption=&#34;An example of an image of a pig that is initially correctly classified by a classifier. On adding a small imperceptible perturbation, the same classifier mis-classifies it as an airliner. &amp;lt;a href=&amp;#39;#adv_ref&amp;#39;&amp;gt;[a]&amp;lt;/a&amp;gt;&#34;&gt;
 
 
   &lt;img src=&#34;https://amartya18x.github.io/lr_layer/adv_pig.png&#34; alt=&#34;&#34;  &gt;
@@ -364,7 +376,10 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/orig_1.png&#34; &gt;
@@ -392,7 +407,10 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/N-LR_1.png&#34; &gt;
@@ -420,7 +438,10 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/2-LR_1.png&#34; &gt;
@@ -450,7 +471,10 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/orig_3.png&#34; &gt;
@@ -478,7 +502,10 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/N-LR_3.png&#34; &gt;
@@ -506,7 +533,10 @@ one.&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/2-LR_3.png&#34; &gt;
@@ -581,7 +611,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/pert_legend.png&#34; &gt;
@@ -609,7 +642,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/pert_comp_fig.png&#34; &gt;
@@ -637,7 +673,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/bb_pert_comp_fig.png&#34; &gt;
@@ -684,7 +723,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/coarse_label_PCA_NLR.png&#34; &gt;
@@ -712,7 +754,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lr_layer/coarse_label_PCA.png&#34; &gt;
@@ -741,7 +786,7 @@ White box attacks are attacks where the perturbation is constructed using the mo
       <link>https://amartya18x.github.io/post/nn_nonconvex/</link>
       <pubDate>Sat, 01 Oct 2016 03:52:46 +0530</pubDate>
       <guid>https://amartya18x.github.io/post/nn_nonconvex/</guid>
-      <description>&lt;p&gt;I don&#39;t remember where I heard this arguement but it was a pretty interesting one and I couldn&#39;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&#39;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
+      <description>&lt;p&gt;I don&amp;rsquo;t remember where I heard this arguement but it was a pretty interesting one and I couldn&amp;rsquo;t remember the entire reasoning and so as I began to think about it, I figured some of it out and I believe it is pretty reasonable. We have all argued that neural networks are difficult to optimize  because they are non-convex(or non-concave) for that matter. What we don&amp;rsquo;t talk about so much is why is it that they are non-convex. It probably has simpler answers where you will argue something about the non-linearities involved. This post has to do with a much more interesting answer.&lt;/p&gt;
 &lt;p&gt;To understand the reasoning, we have to argue that if the function has atleast two local minimas such that their mid-point is not a local minima, the function is non-convex. In formal terms, $$\text{If }\exists x,y \in Dom(f) \hspace{5pt }s.t.\hspace{5pt} g(x) = g(y) = 0 $$ and $$\forall z\in [x,y] \text{ s.t. } g(z) \neq 0  $$ where $g(x)$ is a subgradient at $x$ the function is non-convex.&lt;/p&gt;
 &lt;p&gt;This is pretty simple to follow from the Mid-point value theorem and the definition of convexity.&lt;/p&gt;
 &lt;p&gt;Consider a neural network  $F(\cdot)$ with a few layers and name three layers $L_1, L_2$ and $ L_3$ Consider nodes $a$ and $b$ in $L_1$ and $c$ and $d$ in $L_2$.Let the parameters connecting node $i$ to $j$ be called $w_{ij}$.&lt;/p&gt;
@@ -764,7 +809,10 @@ White box attacks are attacks where the perturbation is constructed using the mo
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-before-permutation&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/before.png&#34; data-caption=&#34;Before permutation!&#34;&gt;
@@ -808,7 +856,10 @@ For reference consider&lt;/p&gt;
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-after-permutation&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/after.png&#34; data-caption=&#34;After permutation!&#34;&gt;
@@ -834,7 +885,7 @@ $$F(n_{1,1}, n_{1, 2}, \cdots, n_{3,1}\cdots)$$
 where $n_{i, j}$ is the $j^{th}$ node in $i^{th}$ layer.
 $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-1}$ is the weight connecting the $k^{th}$ node in ${i-1}^{th}$ layer to the $j^{th}$ node in layer $i$.&lt;/p&gt;
 &lt;p&gt;Note that the transformation from the earlier definition to this definition is many-to-one and not one-to-one, which is easy to guess because of the reduction in the number of parameters.&lt;/p&gt;
-&lt;p&gt;Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn&#39;t change it&#39;s value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.&lt;/p&gt;
+&lt;p&gt;Now, it is also easy to observe that if we permute $n_{1,1}$ amd $n_{1,2}$, $F(\cdot)$ doesn&amp;rsquo;t change it&amp;rsquo;s value.To see how this permuation relates to the original neural network,  we barely need to change the weights in the original function as mentioned above(In the diagram interchange the two nodes in the second layer) i.e. the permutation of the weights mentioned above is equaivalent to this permutation.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What we can infer from this is that for each unique optimal value, there exists $\prod_{i=1}^k n_k!$ points in the parameter space that can achieve that local optima, where $n_k$ is the number of nodes in the $k^{th}$ layer. Turns out that the number of saddle points are exponentially more!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -857,7 +908,10 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-many-many-optimas&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Rastrigin.png&#34; data-caption=&#34;Many many optimas!&#34;&gt;
@@ -877,8 +931,8 @@ $$n_{i,j} = \sum_{j = 1}^k w_{j,k}^{i-1}\sigma (n_{i-1, k})$$ where $w_{j,k}^{i-
 &lt;/figure&gt;
 
 &lt;p&gt;To observe that the points between the local minimas are suboptimal, you will probably have to figure something out more rigorous as I do not have a very tight arguement, but lets look at a very interesting intuition.&lt;/p&gt;
-&lt;p&gt;Let&#39;s assume that the function is convex. This would allow the function to be hit by jensen&#39;s inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
-We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn&#39;t really matter if they are unique or not). If you apply jensen&#39;s inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s assume that the function is convex. This would allow the function to be hit by jensen&amp;rsquo;s inequaltiy which states that for a convex function $g(\cdot)$ $$g(\frac{1}{k}\sum_{i = 1}^k x_i) \le \frac{1}{k} \sum_i g(x_i)$$
+We know that the nodes are permutable within a layer. Let there be $M$ layers and $N_i$ nodes in each layer. We can thus get $$\prod_{i=1}^M N_i !$$  total permutations(Doesn&amp;rsquo;t really matter if they are unique or not). If you apply jensen&amp;rsquo;s inequality to this, what we will have is that the function evaluation at the average is less than or equal to the average of these optimal points, which are all equal and hence what we get is that the evaluation at the average point is also optimal(If it is not, the function is not convex).&lt;/p&gt;
 &lt;p&gt;But notice that we are actually averaging all the permutations possible in a layer and thus what we will get is a set of arguements such that the nodes that belong to the same layer have the same value. To understand this look at the matrices below and assume one layer corresponds to a column. The two matrices are thus independant permutations of the two columns.[
 M_1=
 \begin{bmatrix}
@@ -904,9 +958,9 @@ What this effectively means is that if the neural network was indeed convex, the
 &lt;p&gt;To generalize this to any neural network, you will have to look at the activation functions and their properties. The claim you will be trying to verify is that the average of two permutations of an optimal point need not be optimal.&lt;/p&gt;
 &lt;p&gt;I guess this was an interesting read. A very interesting thing this says is that&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn&#39;t it ?&lt;/p&gt;
+&lt;p&gt;A neural network cannot have a unique optima if it has atleast two distinct node values in the same layer. Amazing , isn&amp;rsquo;t it ?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I guess I haven&#39;t been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!&lt;/p&gt;
+&lt;p&gt;I guess I haven&amp;rsquo;t been mathematically rigorous at all and have taken many assumptions throughout. Maybe I will list them someday!&lt;/p&gt;
 </description>
     </item>
     
@@ -915,8 +969,8 @@ What this effectively means is that if the neural network was indeed convex, the
       <link>https://amartya18x.github.io/post/strconvex/</link>
       <pubDate>Thu, 15 Sep 2016 23:49:40 +0530</pubDate>
       <guid>https://amartya18x.github.io/post/strconvex/</guid>
-      <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
-&lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&#39;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
+      <description>&lt;p&gt;I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular &lt;strong&gt;gradient descent&lt;/strong&gt; works on them. So, before going right into the details let&amp;rsquo;s have a quick chat about convexity in general and we do have a few ways of going about it.&lt;/p&gt;
+&lt;p&gt;I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&amp;rsquo;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.&lt;/p&gt;
 &lt;h2 id=&#34;convex-function&#34;&gt;Convex Function&lt;/h2&gt;
 &lt;p&gt;$$\frac{f(y)+f(x)}{2} \ge f(\frac{x+y}{2}) $$
 Note that this does not require the function to be differentiable. But, with differetiable functions, one can actually get an easier and more productive definition.&lt;/p&gt;
@@ -925,7 +979,7 @@ Note that this does not require the function to be differentiable. But, with dif
 &lt;h3 id=&#34;subgradients&#34;&gt;Subgradients&lt;/h3&gt;
 &lt;p&gt;The interesting thing about this is that this can tolerate functions, which are not differntiable in a finite number of points. We need to define &lt;strong&gt;subgradients&lt;/strong&gt; for that though.&lt;/p&gt;
 &lt;p&gt;$$ g(x) = \{ g(x) | \langle g(x), x_0 - x\rangle \forall y \} $$&lt;/p&gt;
-&lt;p&gt;And hence let&#39;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have&lt;/p&gt;
+&lt;p&gt;And hence let&amp;rsquo;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have&lt;/p&gt;
 &lt;p&gt;$$ f(y) \ge f(x) + \langle  g(x), y - x \rangle $$&lt;/p&gt;
 &lt;h2 id=&#34;strongly-convex-function&#34;&gt;Strongly Convex function&lt;/h2&gt;
 &lt;p&gt;Now that we know of convex functions mathematically, it is intuitively a function such that if we draw a tangent plane(line in case of one variable), the function &lt;strong&gt;lies above the tangent plane&lt;/strong&gt; at all points. Mathematically, that would be&lt;/p&gt;
@@ -954,7 +1008,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Like the function value above, we can also get a bound on the distance of the current point from the optimal point in terms of gradient.&lt;/p&gt;
 &lt;p&gt;\begin{align*}
 f(x^{*})  &amp;amp;\ge f(x) + \langle g(x), x^{*} - x \rangle + \frac{\alpha}{2} \| x^{*} - x\|^2  \\&lt;br&gt;
-&amp;amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;amp;&amp;amp; \text{(By Cauchy&#39;s inequality)}\\&lt;br&gt;
+&amp;amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;amp;&amp;amp; \text{(By Cauchy&amp;rsquo;s inequality)}\\&lt;br&gt;
 \end{align*}
 As we know that $f(x^{*})$ is optimal $ f(x^{*}) \le f(x)$, a \ge 0 must be true.&lt;/p&gt;
 &lt;p&gt;$$ \| g(x)\|\| x^{*} - x \| \ge \frac{\alpha}{2} \| x^{*} - x\|^2  $$
@@ -966,7 +1020,7 @@ $$
 \Phi_t = f(x^t) - f(x^{*})
 $$&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&#39;s also define another distance.
+&lt;li&gt;the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&amp;rsquo;s also define another distance.
 $$
 D_t = \| x^{*} - x_t \|_2
 $$
@@ -988,13 +1042,13 @@ D^2_{t+1} &amp;amp;= \|x^{t+1} - x^{*} \|_2^2 \\&lt;br&gt;
 D^2_{t+1} - D^2_{t} &amp;amp;= \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\&lt;br&gt;
 \langle x^t - x^{*}, g_t\rangle &amp;amp;= \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2}
 \end{align*}
-Let&#39;s plugin in this onto the previous definition of the lyapunov function.
+Let&amp;rsquo;s plugin in this onto the previous definition of the lyapunov function.
 \begin{align*}
 \Phi_t &amp;amp;\le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
 &amp;amp;\le \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\&lt;br&gt;
 &amp;amp;\le  \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t
 \end{align*}
-It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&#39;s inequality.
+It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&amp;rsquo;s inequality.
 \begin{align*}
 \sum_{t=0}^T \Phi_t &amp;amp;\le \sum_{t=0}^T (\frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) \\&lt;br&gt;
 &amp;amp;\le  \sum_{t=0}^T (\frac{D^2_t}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) -  \sum_{t=1} \frac{D^2_{t}}{2\eta_{t-1}} &amp;amp;&amp;amp; \text{(A bit of change of variable)} \\&lt;br&gt;
@@ -1006,9 +1060,9 @@ It is difficult to show that $\Phi_t$ is going to zero. It is considerably easie
 \frac{1}{T}\sum_{t=0}^T {\Phi_t} &amp;amp;\le \frac{G^2 log(T)}{2T} \\&lt;br&gt;
 \sum_{t=0}^T  \frac{f(x^t) - f(x^{*})}{T} &amp;amp;\le \frac{G^2 log(T)}{2T}  \\&lt;br&gt;
 \end{align*}
-Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+Applying Jensen&amp;rsquo;s inequality because $\Phi_t$ is convex
 $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{G^2 log(T)}{2T} $$
-To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&#39;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth&lt;/p&gt;
+To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&amp;rsquo;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth&lt;/p&gt;
 &lt;h1 id=&#34;gradient-descent-for-strongly-smooth-functions&#34;&gt;Gradient descent for strongly smooth functions&lt;/h1&gt;
 &lt;p&gt;We will work with similar &lt;strong&gt;Lyapunov function&lt;/strong&gt; &lt;code&gt;$\Phi\_t$&lt;/code&gt; and &lt;code&gt;$D\_t$&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;As $f(x)$ is strong smooth,
@@ -1045,7 +1099,7 @@ $$ (\frac{1}{2\eta_t} - \frac{\beta}{2}) = \frac{\beta}{2} (\frac{1}{k} - 1)\ge 
 \sum_{t=0}^T \Phi_{t+1} &amp;amp;\le \sum_{t=0}^T \frac{\beta}{2c} (D_{t}^2 - D_{t+1}^2)\\&lt;br&gt;
 \frac{1}{T} \sum_{t=0}^T \Phi_{t+1}  &amp;amp;\le \frac{\beta}{2cT} (D_{0}^2 - D_{T+1}^2)
 \end{align*}
-Applying Jensen&#39;s inequality because $\Phi_t$ is convex
+Applying Jensen&amp;rsquo;s inequality because $\Phi_t$ is convex
 $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{\beta}{2cT} (D_{0}^2 ) $$&lt;/p&gt;
 &lt;p&gt;For both the strongly convex and the strong smooth functions, we have seen the average selector. Is it possible that some other selector can give us better bounds ? Selector refers to the particular way of choosing the $x$, which we want the function to return.&lt;/p&gt;
 </description>
@@ -1071,7 +1125,10 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-montreal-from-mont-royal&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/montreal.jpg&#34; data-caption=&#34;Montreal from Mont Royal&#34;&gt;
@@ -1108,7 +1165,10 @@ It was a one hop flight to Montreal via Zurich and Zurich was probably even more
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-zurich-sunrise&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Swiss.jpg&#34; data-caption=&#34;Zurich Sunrise&#34;&gt;
@@ -1127,9 +1187,9 @@ It was a one hop flight to Montreal via Zurich and Zurich was probably even more
 
 &lt;/figure&gt;
 
-In the next part of the journey, I was accompanied by a Quebecois boy, who was in Poland visiting his friends. I slept there too. Immigration through Montreal was pretty cool. However, when the Border Service Agent asked me my field of study, I had a difficult time trying to figure out what to say - Deep Learning, Machine Learning, Artificial Intelligence ? I said Computer Science though. She asked me if I write apps for iphone and I said yes. I also made the mistake of asking the agent if the swiss knife I had was a weapon, which made her frown quite a lot. I quickly explained that it was rusted and I never really used it other than cutting packets and it was not an original either. But the big problem was when she noticed I had ticked dried fruits in my immigration form. As my mother had packed them, I barely knew what was in it. So, I said it had cashew and some other stuff. And she asked , &amp;ldquo;What other stuff ?&amp;quot;. I said, &amp;ldquo;Buiscuits, raisins and some similar stuff.&amp;rdquo; She asked, &amp;ldquo;What similar stuff ?&amp;rdquo; I said, though I was sure I didnt have them, &amp;ldquo;Apricots probably.&amp;rdquo; And she asked, &amp;ldquo;Anything else?&amp;quot;. I said , &amp;ldquo;No! Just those.&amp;quot;. I still think she was expecting me to say, &amp;ldquo;Marijuana!!&amp;quot;. Why else would someone grill me regarding dried food in my bag.
+In the next part of the journey, I was accompanied by a Quebecois boy, who was in Poland visiting his friends. I slept there too. Immigration through Montreal was pretty cool. However, when the Border Service Agent asked me my field of study, I had a difficult time trying to figure out what to say - Deep Learning, Machine Learning, Artificial Intelligence ? I said Computer Science though. She asked me if I write apps for iphone and I said yes. I also made the mistake of asking the agent if the swiss knife I had was a weapon, which made her frown quite a lot. I quickly explained that it was rusted and I never really used it other than cutting packets and it was not an original either. But the big problem was when she noticed I had ticked dried fruits in my immigration form. As my mother had packed them, I barely knew what was in it. So, I said it had cashew and some other stuff. And she asked , &amp;ldquo;What other stuff ?&amp;rdquo;. I said, &amp;ldquo;Buiscuits, raisins and some similar stuff.&amp;rdquo; She asked, &amp;ldquo;What similar stuff ?&amp;rdquo; I said, though I was sure I didnt have them, &amp;ldquo;Apricots probably.&amp;rdquo; And she asked, &amp;ldquo;Anything else?&amp;rdquo;. I said , &amp;ldquo;No! Just those.&amp;rdquo;. I still think she was expecting me to say, &amp;ldquo;Marijuana!!&amp;rdquo;. Why else would someone grill me regarding dried food in my bag.
 As I escaped immigration, the next part was getting to my apartment, which I had booked via Airbnb. I knew the address and so, I asked a police officer who asked me to take the bus and then a couple in the bus, who told me to get off the bus at Lionel Groulx(Mind you things were in French!) and take the metro and then an old man in the metro, who told me where to get off the metro and finally, I walked the rest of the way to my house. I must admit it felt pretty amazing that day to be in Montreal and I had a nice sleep(Inspite of sleeping all the way).
-The next day, I went to the local Metro(which is a grocery) and bought stuff, I thought I could manage with to satiate my intestines. It was an amazing walk and I noticed I stayed very close to the St. Joseph Oratoire. I didnt get a SIM card though. I thought it wasn&#39;t quite worth it as internet plans(i.e. ones which offered substantial amounts of data) were priced quite high and local calling wasn&#39;t very high on my demand list. Apparently, it didnt go as well for me.
+The next day, I went to the local Metro(which is a grocery) and bought stuff, I thought I could manage with to satiate my intestines. It was an amazing walk and I noticed I stayed very close to the St. Joseph Oratoire. I didnt get a SIM card though. I thought it wasn&amp;rsquo;t quite worth it as internet plans(i.e. ones which offered substantial amounts of data) were priced quite high and local calling wasn&amp;rsquo;t very high on my demand list. Apparently, it didnt go as well for me.
 
 
 
@@ -1145,7 +1205,10 @@ The next day, I went to the local Metro(which is a grocery) and bought stuff, I 
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-st-joseph-oratorie&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Oratorie.jpg&#34; data-caption=&#34;St. Joseph Oratorie&#34;&gt;
@@ -1164,7 +1227,7 @@ The next day, I went to the local Metro(which is a grocery) and bought stuff, I 
 
 &lt;/figure&gt;
 
-Pretty soon, I visited my University and went to my department. People were away for a conference when I got there and so, the first week went lightly trying to read some papers, know some people, read some code and do this and that. Pretty soon, things started in full pace and I began to love the whole idea of venturing into Research but that&#39;s a story for another day. A couple of weeks later,a few people from IAESTE(that&#39;s the organisation that helped me with the visa) met up(me included) and we went around boating in a canal at Le Charlevoux and then we went to Vieux Port(Old Port). I was amazed at the way Montreal had transformed a decaying buisness estate into a place for tourist attraction. We spent some time there and then walked the streets of Old Port which was so similar to the pictures I had seen of streets in Rome. We then had dinner at a place, where I had pasta with spiced bacon. I dont like pasta. That day, I loved it. There have been a few more sharp turns in my culinary tastes. Beefs, pork, aubergines - I absolutely loved the preparations I tasted there. My houseowner was a pretty awesome person. He introduced me to one another thing, I had definitely missed in life before going there - Backgammon. Being, a person who is absolutely fascinated by board games, backgammon was a totally awesome gift to my hobby-list. I played with him with quite often, usually on sundays. He took me to a friend of his, who also loved the game and we had a game in his well-maintained porch with cans of Apple Cidre. Once cannot not like the taste of Apple Cidres.
+Pretty soon, I visited my University and went to my department. People were away for a conference when I got there and so, the first week went lightly trying to read some papers, know some people, read some code and do this and that. Pretty soon, things started in full pace and I began to love the whole idea of venturing into Research but that&amp;rsquo;s a story for another day. A couple of weeks later,a few people from IAESTE(that&amp;rsquo;s the organisation that helped me with the visa) met up(me included) and we went around boating in a canal at Le Charlevoux and then we went to Vieux Port(Old Port). I was amazed at the way Montreal had transformed a decaying buisness estate into a place for tourist attraction. We spent some time there and then walked the streets of Old Port which was so similar to the pictures I had seen of streets in Rome. We then had dinner at a place, where I had pasta with spiced bacon. I dont like pasta. That day, I loved it. There have been a few more sharp turns in my culinary tastes. Beefs, pork, aubergines - I absolutely loved the preparations I tasted there. My houseowner was a pretty awesome person. He introduced me to one another thing, I had definitely missed in life before going there - Backgammon. Being, a person who is absolutely fascinated by board games, backgammon was a totally awesome gift to my hobby-list. I played with him with quite often, usually on sundays. He took me to a friend of his, who also loved the game and we had a game in his well-maintained porch with cans of Apple Cidre. Once cannot not like the taste of Apple Cidres.
 
 
 
@@ -1180,7 +1243,10 @@ Pretty soon, I visited my University and went to my department. People were away
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-cobbled-streets&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/cobble.jpg&#34; data-caption=&#34;Cobbled Streets&#34;&gt;
@@ -1199,7 +1265,7 @@ Pretty soon, I visited my University and went to my department. People were away
 
 &lt;/figure&gt;
 
-The most awesome part of the trip was when and a friend of mine, who was also interning in the same university decided to go on a rather spontaneous unplanned trip to a village.(It&#39;s just a village, we had no idea which village.) All we wanted was to see the Canadian countryside and the Laurentians were quite close and it would have been a crime to miss them. So yes - a village in the Laurentians. it would have been similarly insane to not atleast spend a night there. Keeping these in mind, we decided to spend a night somewhere in the Laurentians and I searched for a place on Airbnb in the general vicinity of the Laurentians within a reasonable price and we stumbled a pretty house in the woods.
+The most awesome part of the trip was when and a friend of mine, who was also interning in the same university decided to go on a rather spontaneous unplanned trip to a village.(It&amp;rsquo;s just a village, we had no idea which village.) All we wanted was to see the Canadian countryside and the Laurentians were quite close and it would have been a crime to miss them. So yes - a village in the Laurentians. it would have been similarly insane to not atleast spend a night there. Keeping these in mind, we decided to spend a night somewhere in the Laurentians and I searched for a place on Airbnb in the general vicinity of the Laurentians within a reasonable price and we stumbled a pretty house in the woods.
 We planned to get the morning metro to the Montmorency station and then a local bus to a village called St. Jerome, which also happened to be the starting place of a cycling path called Petit train du Nord(The small train of the North). It was initally a rail track, which they converted to a cycling path when the place went outdated. It had a beautiful terrain through the mountains finally ending in Mont Laurier. We wished to go though the tour, atleast partly, however it was too costly. So, back to our traevelling plans. It all went wrong when we woke up late and missed the first metro, which in turn made us miss the bus to St. Jerome and which in turn made us miss the bus to Val David. Oh! I really I havent told you where we were going. We were going to a small village that lies somewhere in the centre of Les Petit train du Nord called Val David.
 
 
@@ -1216,7 +1282,10 @@ We planned to get the morning metro to the Montmorency station and then a local 
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-val-david&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Valdavid.jpg&#34; data-caption=&#34;Val David&#34;&gt;
@@ -1235,7 +1304,7 @@ We planned to get the morning metro to the Montmorency station and then a local 
 
 &lt;/figure&gt;
 
-The good thing is, this forced us to spend some time in St. Jerome. There is a pretty little stream cutting through the village, a peculiar church(that somehow looked like a huge bakery to me), a contemporary art museum and a lot of people on cycle. Apparently, everyone was riding a cycle. Abled people rode high cycles, stunt cycles, mountain bikes or racing bikes. Differently abled people rode battery powered wheel chairs and some of them were pretty cool. We had a lunch of hot dog and vanilla Ice cream. it was a task in itself trying to order them as people didn&#39;t speak english in the place. It was mostly show-and-tell. We ended up buying tickets for a different bus and the bus was pretty luxurious. We sped through a road though the Laurentians. Laurentians is an old range and has hence eroded over time. It is a popular skiing place , not the right time though. There were patches of ski trails that were clearly visible though the woods. I have always loved woods and mountains more than oceans for the serenity and the colorful scenery it provides. Along with us on the highway, there were a lot of pickup trucks and most of them carried bicycles on their backs. These people were going to start cycling on the train from Mont Laurier(i.e. in the upper part of the Laurentians) and come down to St. Jerome. I will put that on my bucketlist for now. After a very short ride the bus dropped us off at the crossing of Val David. We were quite hungry and we noticed a Tim Hortons. Tim Hortons is the biggest fast food chain(takeaway food chain) in Canada and its quite better than the McDs there. I had some sandwich those guys made along with coffee and home fries. However, the girl at the counter forgot to add the fries and the coffee and charged us for the sandwich only. When I mentioned that I had asked for fries and coffee too, even after insisting repeatedly she didn&#39;t take our money and gave them to us for free. Somehow, I hold free food-givers quite high in my list of respected people. 
+The good thing is, this forced us to spend some time in St. Jerome. There is a pretty little stream cutting through the village, a peculiar church(that somehow looked like a huge bakery to me), a contemporary art museum and a lot of people on cycle. Apparently, everyone was riding a cycle. Abled people rode high cycles, stunt cycles, mountain bikes or racing bikes. Differently abled people rode battery powered wheel chairs and some of them were pretty cool. We had a lunch of hot dog and vanilla Ice cream. it was a task in itself trying to order them as people didn&amp;rsquo;t speak english in the place. It was mostly show-and-tell. We ended up buying tickets for a different bus and the bus was pretty luxurious. We sped through a road though the Laurentians. Laurentians is an old range and has hence eroded over time. It is a popular skiing place , not the right time though. There were patches of ski trails that were clearly visible though the woods. I have always loved woods and mountains more than oceans for the serenity and the colorful scenery it provides. Along with us on the highway, there were a lot of pickup trucks and most of them carried bicycles on their backs. These people were going to start cycling on the train from Mont Laurier(i.e. in the upper part of the Laurentians) and come down to St. Jerome. I will put that on my bucketlist for now. After a very short ride the bus dropped us off at the crossing of Val David. We were quite hungry and we noticed a Tim Hortons. Tim Hortons is the biggest fast food chain(takeaway food chain) in Canada and its quite better than the McDs there. I had some sandwich those guys made along with coffee and home fries. However, the girl at the counter forgot to add the fries and the coffee and charged us for the sandwich only. When I mentioned that I had asked for fries and coffee too, even after insisting repeatedly she didn&amp;rsquo;t take our money and gave them to us for free. Somehow, I hold free food-givers quite high in my list of respected people. 
 
 
 
@@ -1250,7 +1319,10 @@ The good thing is, this forced us to spend some time in St. Jerome. There is a p
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-starting-point-of-petit-train-du-nord&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Jerome.jpg&#34; data-caption=&#34;Starting point of Petit Train du Nord&#34;&gt;
@@ -1269,7 +1341,7 @@ The good thing is, this forced us to spend some time in St. Jerome. There is a p
 
 &lt;/figure&gt;
 
-Our house was some 5-6 km away i.e. inside Val David and there wasn&#39;t any public transport available. Assisted by google maps and hoping for free rides, we started walking. It was 6 and still bright. Curious as we were, we took a diversion when we saw a lake on the map. We walked via the cycling trail till we reached a lake and it was such a pretty lake. Then we noticed a regional parc near it and just to be clear parcs mean some kind of forests and so, we decided to make it to the parc. On reaching the parc, we asked the guard if we could go through the parc. He told us to come back tomorrow as it would get pretty dark soon and it wouldn&#39;t be safe. I remember him telling us there weren&#39;t many bear parc as the parc wasn&#39;t too big and we wondered , who would want to go hiking in a parc with bears and canadian bears are not the cute kind.
+Our house was some 5-6 km away i.e. inside Val David and there wasn&amp;rsquo;t any public transport available. Assisted by google maps and hoping for free rides, we started walking. It was 6 and still bright. Curious as we were, we took a diversion when we saw a lake on the map. We walked via the cycling trail till we reached a lake and it was such a pretty lake. Then we noticed a regional parc near it and just to be clear parcs mean some kind of forests and so, we decided to make it to the parc. On reaching the parc, we asked the guard if we could go through the parc. He told us to come back tomorrow as it would get pretty dark soon and it wouldn&amp;rsquo;t be safe. I remember him telling us there weren&amp;rsquo;t many bear parc as the parc wasn&amp;rsquo;t too big and we wondered , who would want to go hiking in a parc with bears and canadian bears are not the cute kind.
 
 
 
@@ -1285,7 +1357,10 @@ Our house was some 5-6 km away i.e. inside Val David and there wasn&#39;t any pu
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-a-house-by-the-lake&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/lake.jpg&#34; data-caption=&#34;A house by the lake&#34;&gt;
@@ -1320,7 +1395,10 @@ So, we walked back all the way and started walking towrds the house, which was s
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-a-beautiful-house&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/beautiful_house.jpg&#34; data-caption=&#34;A beautiful house&#34;&gt;
@@ -1355,7 +1433,10 @@ And on we went down the road for another couple of hours. Went by houses and lak
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-house-in-the-woods&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/house.jpg&#34; data-caption=&#34;House in the woods&#34;&gt;
@@ -1390,7 +1471,10 @@ Well, the next morning we walked all the way back to the Tim Hortons for breakfa
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-me-with-my-stick&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Candor_me.jpg&#34; data-caption=&#34;Me with my stick&#34;&gt;
@@ -1424,7 +1508,10 @@ To put things in a shell, I was highly impressed by the beauty and the serenity 
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-the-trail&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/trek.jpg&#34; data-caption=&#34;The trail&#34;&gt;
@@ -1444,8 +1531,8 @@ To put things in a shell, I was highly impressed by the beauty and the serenity 
 &lt;/figure&gt;
 
 The next few weeks went pretty quietly and busy with work. We,(Shivsankar and me), went out almost every night to visit parts of the city. We would often take the bus and get down somewhere and start walking. One night, before we had the bus pass,miser that we were, we didnt want to spend on a bus ticket and we walk almost 16km around Mont Royal to walk to our home. It was 1 am by the team we reached. Other days, we went to a pub called Randolph, which was a board games pub and it was so beautiful and we had grown a friendly acquaintance with the gamemasters, bartender and waiters. Randolph had been mine most frequently visited place in Montreal. I often wondered during my visits to the pub, how wonderful a job it was to teach people how to play board games and then get paid for it.(Canada also has some minimum wage law I guess) We would also take the Metro to other places like Place des Arts and St. Catherine etc.
-Another person, without whom the trip wouldn&#39;t have been as enjoyable as it was is Anirudh. We would often go out to eat(Not many times though). We went to a Jazz festival and I discovered I absolutely love Jazz music though it might have just been the concert effect. It was the grand show by Jamie Cullum and I loved the song When I get Famous. I also had another tasty pizza at an Italian Place, which I had previously visited with Shivsankar. I was totally amazed at the number of different kinds of pizza they had to offer and the number was around 70. Pizzas were quite different there than it is here. The crust is usually thinner and they have sie fillings beneath the cheese which forms a kind of layer and then they have some toppings on it. I dont understand why they want to eat it with fork. A couple of days, I went to a greek place, where I discovered another culinary sweetheart called Souvlaki in Tsaziki. I dont think I can do justice to that great dish by trying to describe it. So just google it and watch the imagies and drool. A few dys before I left, another guy from my lab Tanel Parnamaa finished his intern and went back to Estonia. So, we went out to see him off. We went to a Japanese Raman place and yes, it was awesome too. I believe I had octopus that day too. So, I tasted quite a lot different cuisines there including lebanese, portugese, french, peruvian, greek, thai, vietnamese, quebecoise and Italian. Maybe I will write a seperate post about the food there. It is just that I forget to take pictures before eating them.
-There was a place called Brulerie&#39;s and Luc de Lorraine quite close to the University. One should absolutely visit them. Brulerie is a really cheap place for weekdays early breakfast. It gives you a choice of meat, a couple of eggs(in whatever style), bread, home fries , fruits and unlimited coffee for only 7$, which is cheap. Don&#39;t convert it to INR. Just take my word for it that it is cheap. Luc de Lorraine is however pretty costly but serves absolutely delicious french lunch.
+Another person, without whom the trip wouldn&amp;rsquo;t have been as enjoyable as it was is Anirudh. We would often go out to eat(Not many times though). We went to a Jazz festival and I discovered I absolutely love Jazz music though it might have just been the concert effect. It was the grand show by Jamie Cullum and I loved the song When I get Famous. I also had another tasty pizza at an Italian Place, which I had previously visited with Shivsankar. I was totally amazed at the number of different kinds of pizza they had to offer and the number was around 70. Pizzas were quite different there than it is here. The crust is usually thinner and they have sie fillings beneath the cheese which forms a kind of layer and then they have some toppings on it. I dont understand why they want to eat it with fork. A couple of days, I went to a greek place, where I discovered another culinary sweetheart called Souvlaki in Tsaziki. I dont think I can do justice to that great dish by trying to describe it. So just google it and watch the imagies and drool. A few dys before I left, another guy from my lab Tanel Parnamaa finished his intern and went back to Estonia. So, we went out to see him off. We went to a Japanese Raman place and yes, it was awesome too. I believe I had octopus that day too. So, I tasted quite a lot different cuisines there including lebanese, portugese, french, peruvian, greek, thai, vietnamese, quebecoise and Italian. Maybe I will write a seperate post about the food there. It is just that I forget to take pictures before eating them.
+There was a place called Brulerie&amp;rsquo;s and Luc de Lorraine quite close to the University. One should absolutely visit them. Brulerie is a really cheap place for weekdays early breakfast. It gives you a choice of meat, a couple of eggs(in whatever style), bread, home fries , fruits and unlimited coffee for only 7$, which is cheap. Don&amp;rsquo;t convert it to INR. Just take my word for it that it is cheap. Luc de Lorraine is however pretty costly but serves absolutely delicious french lunch.
 
 
 
@@ -1461,7 +1548,10 @@ There was a place called Brulerie&#39;s and Luc de Lorraine quite close to the U
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-dinner-for-tanel-with-dima-anirudh-krishna-rosemary-and-zander&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/Tanel.jpg&#34; data-caption=&#34;Dinner for Tanel with Dima, Anirudh, Krishna, Rosemary and Zander&#34;&gt;
@@ -1496,7 +1586,10 @@ I had my parting dinner in a vegan thai place with some pretty awesome people in
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-my-dinner&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/my_dinner.jpg&#34; data-caption=&#34;My Dinner&#34;&gt;
@@ -1515,7 +1608,7 @@ I had my parting dinner in a vegan thai place with some pretty awesome people in
 
 &lt;/figure&gt;
 
-I can&#39;t explain how badly I miss the place. It is an absolutely must-go place for - everyone.
+I can&amp;rsquo;t explain how badly I miss the place. It is an absolutely must-go place for - everyone.
 
 
 
@@ -1531,7 +1624,10 @@ I can&#39;t explain how badly I miss the place. It is an absolutely must-go plac
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure id=&#34;figure-will-come-back&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://amartya18x.github.io/candor_back.jpg&#34; data-caption=&#34;Will come back.&#34;&gt;

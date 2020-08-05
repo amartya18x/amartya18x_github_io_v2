@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.7.0">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
 
+  
+
+  
   
 
   
@@ -21,14 +23,14 @@
   
   
 
-  <meta name="author" content="Amartya Sanyal">
+  
 
   
   
   
     
   
-  <meta name="description" content="I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular gradient descent works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.
+  <meta name="description" content="I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular gradient descent works on them. So, before going right into the details let&rsquo;s have a quick chat about convexity in general and we do have a few ways of going about it.
 I will go about with talking about two definitions of convex functions, the first one being general more than the second.">
 
   
@@ -54,7 +56,7 @@ I will go about with talking about two definitions of convex functions, the firs
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
@@ -67,8 +69,8 @@ I will go about with talking about two definitions of convex functions, the firs
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -80,6 +82,13 @@ I will go about with talking about two definitions of convex functions, the firs
     
 
     
+    
+      
+
+      
+      
+
+      
     
       
 
@@ -196,7 +205,11 @@ I will go about with talking about two definitions of convex functions, the firs
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
   
 
   
@@ -214,6 +227,9 @@ I will go about with talking about two definitions of convex functions, the firs
 
 
   
+  
+
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
@@ -221,6 +237,8 @@ I will go about with talking about two definitions of convex functions, the firs
 
   <link rel="canonical" href="https://amartya18x.github.io/post/strconvex/">
 
+  
+  
   
   
   
@@ -238,7 +256,7 @@ I will go about with talking about two definitions of convex functions, the firs
   <meta property="og:site_name" content="Amartya Sanyal">
   <meta property="og:url" content="https://amartya18x.github.io/post/strconvex/">
   <meta property="og:title" content="Strong Convexity and Strong Smoothness | Amartya Sanyal">
-  <meta property="og:description" content="I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular gradient descent works on them. So, before going right into the details let&#39;s have a quick chat about convexity in general and we do have a few ways of going about it.
+  <meta property="og:description" content="I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular gradient descent works on them. So, before going right into the details let&rsquo;s have a quick chat about convexity in general and we do have a few ways of going about it.
 I will go about with talking about two definitions of convex functions, the first one being general more than the second."><meta property="og:image" content="https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -276,11 +294,6 @@ I will go about with talking about two definitions of convex functions, the firs
   "datePublished": "2016-09-15T23:49:40+05:30",
   "dateModified": "2020-01-23T11:07:53Z",
   
-  "author": {
-    "@type": "Person",
-    "name": "Amartya Sanyal"
-  },
-  
   "publisher": {
     "@type": "Organization",
     "name": "Amartya Sanyal",
@@ -289,7 +302,7 @@ I will go about with talking about two definitions of convex functions, the firs
       "url": "https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular gradient descent works on them. So, before going right into the details let's have a quick chat about convexity in general and we do have a few ways of going about it.\nI will go about with talking about two definitions of convex functions, the first one being general more than the second."
+  "description": "I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular gradient descent works on them. So, before going right into the details let\u0026rsquo;s have a quick chat about convexity in general and we do have a few ways of going about it.\nI will go about with talking about two definitions of convex functions, the first one being general more than the second."
 }
 </script>
 
@@ -310,7 +323,6 @@ I will go about with talking about two definitions of convex functions, the firs
   <title>Strong Convexity and Strong Smoothness | Amartya Sanyal</title>
 
 </head>
-
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
@@ -329,7 +341,7 @@ I will go about with talking about two definitions of convex functions, the firs
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -346,6 +358,8 @@ I will go about with talking about two definitions of convex functions, the firs
 
 
   
+
+
 
 
 
@@ -537,14 +551,10 @@ I will go about with talking about two definitions of convex functions, the firs
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
-      
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-      </li>
       
 
       
@@ -645,8 +655,8 @@ I will go about with talking about two definitions of convex functions, the firs
   <div class="article-container">
 
     <div class="article-style">
-      <p>I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular <strong>gradient descent</strong> works on them. So, before going right into the details let's have a quick chat about convexity in general and we do have a few ways of going about it.</p>
-<p>I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren't more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.</p>
+      <p>I am going to , inspired by the course on optimization that I am doing this semester, talk a bit about strong convexity and strong smoothness and our very popular <strong>gradient descent</strong> works on them. So, before going right into the details let&rsquo;s have a quick chat about convexity in general and we do have a few ways of going about it.</p>
+<p>I will go about with talking about two definitions of convex functions, the first one being general more than the second. This is not to say that there aren&rsquo;t more general or equivalent definitions, which there are, but that I like these better and this is probably what you will use more in your life if you have to use one at all.</p>
 <h2 id="convex-function">Convex Function</h2>
 <p>$$\frac{f(y)+f(x)}{2} \ge f(\frac{x+y}{2}) $$
 Note that this does not require the function to be differentiable. But, with differetiable functions, one can actually get an easier and more productive definition.</p>
@@ -655,7 +665,7 @@ Note that this does not require the function to be differentiable. But, with dif
 <h3 id="subgradients">Subgradients</h3>
 <p>The interesting thing about this is that this can tolerate functions, which are not differntiable in a finite number of points. We need to define <strong>subgradients</strong> for that though.</p>
 <p>$$ g(x) = \{ g(x) | \langle g(x), x_0 - x\rangle \forall y \} $$</p>
-<p>And hence let's do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have</p>
+<p>And hence let&rsquo;s do the intuitive thing of replacing  $\nabla f(x)$ with $g(x)$. So, now we have</p>
 <p>$$ f(y) \ge f(x) + \langle  g(x), y - x \rangle $$</p>
 <h2 id="strongly-convex-function">Strongly Convex function</h2>
 <p>Now that we know of convex functions mathematically, it is intuitively a function such that if we draw a tangent plane(line in case of one variable), the function <strong>lies above the tangent plane</strong> at all points. Mathematically, that would be</p>
@@ -684,7 +694,7 @@ $$</p>
 <p>Like the function value above, we can also get a bound on the distance of the current point from the optimal point in terms of gradient.</p>
 <p>\begin{align*}
 f(x^{*})  &amp;\ge f(x) + \langle g(x), x^{*} - x \rangle + \frac{\alpha}{2} \| x^{*} - x\|^2  \\<br>
-&amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;&amp; \text{(By Cauchy's inequality)}\\<br>
+&amp;\ge f(x) - \underbrace{( \{ \| g(x)\|\| x^{*} - x \| - \frac{\alpha}{2} \| x^{*} - x\|^2 \}) }_a &amp;&amp; \text{(By Cauchy&rsquo;s inequality)}\\<br>
 \end{align*}
 As we know that $f(x^{*})$ is optimal $ f(x^{*}) \le f(x)$, a \ge 0 must be true.</p>
 <p>$$ \| g(x)\|\| x^{*} - x \| \ge \frac{\alpha}{2} \| x^{*} - x\|^2  $$
@@ -696,7 +706,7 @@ $$
 \Phi_t = f(x^t) - f(x^{*})
 $$</p>
 <ul>
-<li>the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let's also define another distance.
+<li>the lyapunov function. Decrease in the value of the lyapunov function means that the function is nearing its optima. Let&rsquo;s also define another distance.
 $$
 D_t = \| x^{*} - x_t \|_2
 $$
@@ -718,13 +728,13 @@ D^2_{t+1} &amp;= \|x^{t+1} - x^{*} \|_2^2 \\<br>
 D^2_{t+1} - D^2_{t} &amp;= \eta_t^2 \|g_t(x_t)\|^2  - 2 \eta_t   \langle x^t - x^{*}, g_t\rangle \\<br>
 \langle x^t - x^{*}, g_t\rangle &amp;= \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2}
 \end{align*}
-Let's plugin in this onto the previous definition of the lyapunov function.
+Let&rsquo;s plugin in this onto the previous definition of the lyapunov function.
 \begin{align*}
 \Phi_t &amp;\le -\langle g(x_t), x^{*} - x_t \rangle - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\<br>
 &amp;\le \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} \| x^{*} - x_t\|^2 \\<br>
 &amp;\le  \frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t
 \end{align*}
-It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen's inequality.
+It is difficult to show that $\Phi_t$ is going to zero. It is considerably easier to use the sum for that. We will see a trick with jensen&rsquo;s inequality.
 \begin{align*}
 \sum_{t=0}^T \Phi_t &amp;\le \sum_{t=0}^T (\frac{D^2_t - D^2_{t+1}}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) \\<br>
 &amp;\le  \sum_{t=0}^T (\frac{D^2_t}{2\eta_t} + \frac{\eta_t \|g_t\|^2}{2} - \frac{\alpha}{2} D^2_t) -  \sum_{t=1} \frac{D^2_{t}}{2\eta_{t-1}} &amp;&amp; \text{(A bit of change of variable)} \\<br>
@@ -736,9 +746,9 @@ It is difficult to show that $\Phi_t$ is going to zero. It is considerably easie
 \frac{1}{T}\sum_{t=0}^T {\Phi_t} &amp;\le \frac{G^2 log(T)}{2T} \\<br>
 \sum_{t=0}^T  \frac{f(x^t) - f(x^{*})}{T} &amp;\le \frac{G^2 log(T)}{2T}  \\<br>
 \end{align*}
-Applying Jensen's inequality because $\Phi_t$ is convex
+Applying Jensen&rsquo;s inequality because $\Phi_t$ is convex
 $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{G^2 log(T)}{2T} $$
-To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don't forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth</p>
+To remove the $log(T)$, try doing a weighed sum of the $\Phi_t$ with $t\Phi_(t)$ and then don&rsquo;t forget to divide by $\sum_{t=1}^{T}t$. It will work out smooth</p>
 <h1 id="gradient-descent-for-strongly-smooth-functions">Gradient descent for strongly smooth functions</h1>
 <p>We will work with similar <strong>Lyapunov function</strong> <code>$\Phi\_t$</code> and <code>$D\_t$</code></p>
 <p>As $f(x)$ is strong smooth,
@@ -775,7 +785,7 @@ $$ (\frac{1}{2\eta_t} - \frac{\beta}{2}) = \frac{\beta}{2} (\frac{1}{k} - 1)\ge 
 \sum_{t=0}^T \Phi_{t+1} &amp;\le \sum_{t=0}^T \frac{\beta}{2c} (D_{t}^2 - D_{t+1}^2)\\<br>
 \frac{1}{T} \sum_{t=0}^T \Phi_{t+1}  &amp;\le \frac{\beta}{2cT} (D_{0}^2 - D_{T+1}^2)
 \end{align*}
-Applying Jensen's inequality because $\Phi_t$ is convex
+Applying Jensen&rsquo;s inequality because $\Phi_t$ is convex
 $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \le \frac{\beta}{2cT} (D_{0}^2 ) $$</p>
 <p>For both the strongly convex and the strong smooth functions, we have seen the average selector. Is it possible that some other selector can give us better bounds ? Selector refers to the particular way of choosing the $x$, which we want the function to return.</p>
 
@@ -785,9 +795,10 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
 
 
+
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/academic/">academic</a>
+  <a class="badge badge-light" href="/tags/academic/"></a>
   
 </div>
 
@@ -889,30 +900,31 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
 
   
-
-
-
-
-
-
   
-  
+
+
+
+
+
   
     
-  
-  
-  
-  <div class="media author-card content-widget-hr">
+    
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hue776a334b902d7828bf5c7a8aa11ccb3_924185_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
     
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hue776a334b902d7828bf5c7a8aa11ccb3_924185_270x270_fill_q90_lanczos_center.jpg" alt="">
+      
 
-    <div class="media-body">
-      <h5 class="card-title"><a href="https://amartya18x.github.io/">Amartya Sanyal</a></h5>
-      <h6 class="card-subtitle">DPhil (PhD) Student in Computer Science</h6>
-      <p class="card-text">I am interested in  understanding the behaviours of deep neural networks and designing practical algorithms to avoid some of its unwanted artifacts.</p>
-      <ul class="network-icon" aria-hidden="true">
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://amartya18x.github.io/"></a></h5>
+        <h6 class="card-subtitle">DPhil (PhD) Student in Computer Science</h6>
+        <p class="card-text">I am interested in  understanding the behaviours of deep neural networks and designing practical algorithms to avoid some of its unwanted artifacts.</p>
+        <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -995,8 +1007,12 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
   
 </ul>
 
+      </div>
     </div>
-  </div>
+  
+
+
+
 
 
 
@@ -1034,8 +1050,7 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
 
 
-  
-  
+
 
 
 
@@ -1047,20 +1062,21 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
     
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js" integrity="sha256-JEqEejGt4tR35L0a1zodzsV0/PJ6GIf7J4yDtywdrH8=" crossorigin="anonymous" title="mermaid"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
         
       
 
@@ -1094,7 +1110,8 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
         'post': "Posts",
         'project': "Projects",
         'publication' : "Publications",
-        'talk' : "Talks"
+        'talk' : "Talks",
+        'slides' : "Slides"
         };
     </script>
     
@@ -1128,6 +1145,9 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
     
     
+
+    
+    
     <script id="dsq-count-scr" src="https://amartyasanyal.disqus.com/count.js" async></script>
     
 
@@ -1145,7 +1165,7 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
     
     
     
-    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
 
     
 
@@ -1162,10 +1182,21 @@ $$f(\frac{\sum_{t=0}^T x^t}{T}) \le \sum_{t=0}^T  \frac{f(x^t) }{T} - f(x^{*}) \
 
   <p class="powered-by">
     
+  </p>
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
 
     
     <span class="float-right" aria-hidden="true">
