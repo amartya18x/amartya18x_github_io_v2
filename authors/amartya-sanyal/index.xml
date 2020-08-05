@@ -5,12 +5,20 @@
     <link>https://amartya18x.github.io/authors/amartya-sanyal/</link>
       <atom:link href="https://amartya18x.github.io/authors/amartya-sanyal/index.xml" rel="self" type="application/rss+xml" />
     <description>Amartya Sanyal</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 07 Aug 2020 10:30:00 +0000</lastBuildDate>
     <image>
       <url>https://amartya18x.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Amartya Sanyal</title>
       <link>https://amartya18x.github.io/authors/amartya-sanyal/</link>
     </image>
+    
+    <item>
+      <title>How Benign is Benign Overfitting ?</title>
+      <link>https://amartya18x.github.io/talk/iitkbenign/</link>
+      <pubDate>Fri, 07 Aug 2020 10:30:00 +0000</pubDate>
+      <guid>https://amartya18x.github.io/talk/iitkbenign/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>How Benign is Benign Overfitting?</title>
@@ -842,14 +850,6 @@ White box attacks are attacks where the perturbation is constructed using the mo
       <link>https://amartya18x.github.io/publication/non_dec/</link>
       <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
       <guid>https://amartya18x.github.io/publication/non_dec/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>How Benign is Benign Overfitting</title>
-      <link>https://amartya18x.github.io/talk/iitkbenign/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://amartya18x.github.io/talk/iitkbenign/</guid>
       <description></description>
     </item>
     
